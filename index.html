@@ -1,0 +1,798 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Planification de l'enseignement au collégial</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#e9eae5">
+<style>
+/* Mise en page : barre latérale de chapitres + colonne de lecture; identité reprise du guide d'origine (sauge, Georgia). */
+:root{
+--bg:#e9eae5;--paper:#fcfcf8;--ink:#223934;--muted:#53665f;--sage:#577e69;--soft:#e8efe8;--nav:#dce9df;--sky:#e4eff4;--tan:#f5eddf;--line:#d0d9d1;--dark:#244c40;--ochre:#b37a41;--notebg:#f6eddf;--fb:#e6eee5;--btn:#285b48;--btnhover:#1b4535;--btnfg:#ffffff;--btnalt:#e5eee6;--btnaltfg:#255543;--btnaltline:#bfd2c4;--field:#ffffff;--fieldline:#b9cbbd;--th:#dce9df;--tdalt:#f3f5f0;--sidebar:#f3f4ee;--ex:#ffffff;--exline:#c8d8cc;--ok:#2f6b4c;--okbg:#e3f0e6;--bad:#9a4a2a;--badbg:#f8e6dc;--tag:#deeadf;--tagfg:#2c5947;--link:#275c50;--heroA:#dae8da;--heroB:#e9f0e8;--heroC:#dfeaf0;--ring:#9bb8a459;--shadow:0 9px 28px #183b2912;
+--serif:Georgia,"Times New Roman",serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121916;--paper:#1a2420;--ink:#dce6df;--muted:#9db0a6;--sage:#86b096;--soft:#1d2a24;--nav:#24372e;--sky:#18262c;--tan:#272219;--line:#30403a;--dark:#cde3d4;--ochre:#d49b60;--notebg:#2a2319;--fb:#1e2d26;--btn:#3d7860;--btnhover:#4a8a70;--btnfg:#ffffff;--btnalt:#22332b;--btnaltfg:#cfe3d5;--btnaltline:#3b5146;--field:#111815;--fieldline:#3a4c44;--th:#24372e;--tdalt:#17201c;--sidebar:#161f1b;--ex:#17211d;--exline:#34483f;--ok:#8fd0aa;--okbg:#1d3328;--bad:#f0a888;--badbg:#3a2419;--tag:#26392f;--tagfg:#bfe0cb;--link:#8fc9b2;--heroA:#1c2b24;--heroB:#18241f;--heroC:#18252b;--ring:#86b09633;--shadow:0 9px 28px #00000040;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121916;--paper:#1a2420;--ink:#dce6df;--muted:#9db0a6;--sage:#86b096;--soft:#1d2a24;--nav:#24372e;--sky:#18262c;--tan:#272219;--line:#30403a;--dark:#cde3d4;--ochre:#d49b60;--notebg:#2a2319;--fb:#1e2d26;--btn:#3d7860;--btnhover:#4a8a70;--btnfg:#ffffff;--btnalt:#22332b;--btnaltfg:#cfe3d5;--btnaltline:#3b5146;--field:#111815;--fieldline:#3a4c44;--th:#24372e;--tdalt:#17201c;--sidebar:#161f1b;--ex:#17211d;--exline:#34483f;--ok:#8fd0aa;--okbg:#1d3328;--bad:#f0a888;--badbg:#3a2419;--tag:#26392f;--tagfg:#bfe0cb;--link:#8fc9b2;--heroA:#1c2b24;--heroB:#18241f;--heroC:#18252b;--ring:#86b09633;--shadow:0 9px 28px #00000040;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans)}
+button,input,textarea,select{font:inherit;color:inherit}
+a{color:var(--link)}a:hover{text-decoration-thickness:2px}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--sage);outline-offset:2px}
+.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:8px;z-index:999;background:var(--paper);padding:8px}
+.shell{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100vh}
+.sidebar{position:sticky;top:0;height:100vh;overflow:auto;background:var(--sidebar);border-right:1px solid var(--line);padding:27px 17px}
+.brand{font-family:var(--serif);font-size:22px;line-height:1.18;color:var(--dark);font-weight:700;margin-bottom:8px;text-wrap:balance}
+.side-sub{font-size:12px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);margin:14px 7px}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav button{border:0;background:transparent;padding:9px 12px;color:var(--ink);text-align:left;border-radius:10px;line-height:1.3;font-size:14px}
+.nav button:hover,.nav button[aria-current="page"]{background:var(--nav);color:var(--dark)}
+.nav button[aria-current="page"]{font-weight:700;box-shadow:inset 3px 0 var(--sage)}
+.nav .navpart{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:12px 12px 2px;font-weight:700}
+.sidebarfoot{font-size:12px;color:var(--muted);margin:24px 8px}
+.main{max-width:1160px;width:100%;margin:auto;padding-block:35px 110px;padding-left:max(16px,env(safe-area-inset-left,0px),5vw);padding-right:max(16px,env(safe-area-inset-right,0px),5vw)}
+@media(min-width:1500px){.main{padding-left:72px;padding-right:72px}}
+.topline{color:var(--sage);text-transform:uppercase;letter-spacing:.14em;font-weight:750;font-size:12px}
+.hero{background:linear-gradient(120deg,var(--heroA),var(--heroB) 62%,var(--heroC));padding:36px clamp(22px,4vw,48px);border-radius:24px;position:relative;overflow:hidden}
+.hero:after{content:"";width:200px;height:200px;border:30px solid var(--ring);position:absolute;right:-75px;bottom:-110px;border-radius:50%;pointer-events:none}
+h1,h2,h3{font-family:var(--serif);line-height:1.22;color:var(--dark);text-wrap:balance}
+h1{font-size:clamp(30px,4.2vw,50px);letter-spacing:-.022em;margin:10px 0 16px}
+h2{font-size:clamp(24px,2.6vw,33px);margin:38px 0 14px}
+h3{font-size:20px;margin:24px 0 8px}
+p{margin:9px 0 15px}
+.lede{font-size:19px;max-width:800px}
+.chapter{display:none}.chapter.active{display:block}
+.kicker{font-weight:750;color:var(--sage);letter-spacing:.11em;text-transform:uppercase;font-size:12px;margin-top:5px}
+.sectionintro{max-width:820px;color:var(--muted);font-size:18px}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:clamp(18px,2.8vw,28px);margin:18px 0;box-shadow:var(--shadow)}
+.panel h3:first-child{margin-top:0}
+.soft{background:var(--soft)}.blue{background:var(--sky)}.tan{background:var(--tan)}
+.accent{border-left:5px solid var(--sage)}
+.grid2,.grid3{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid2>*,.grid3>*{min-width:0}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{margin-top:0;font-size:19px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sage);font-weight:800}
+.tag{display:inline-block;border-radius:30px;background:var(--tag);padding:3px 10px;font-size:12px;font-weight:750;color:var(--tagfg)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 4px}
+.code{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:.92em;background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin:18px 0}
+.step{background:var(--paper);border:1px solid var(--line);padding:16px;border-radius:12px;flex:1 1 150px;min-width:0}
+.arrow{align-self:center;color:var(--sage);font-size:24px;font-weight:800}
+.tablewrap{width:100%;overflow-x:auto;margin:12px 0}
+.table{width:100%;border-collapse:collapse;min-width:600px;background:var(--paper);font-size:14px}
+.table th{background:var(--th);text-align:left}
+.table th,.table td{border:1px solid var(--line);padding:11px 13px;vertical-align:top}
+.table tr:nth-child(even) td{background:var(--tdalt)}
+.small{font-size:13px;color:var(--muted)}
+.note{padding:18px 20px;border-left:4px solid var(--ochre);background:var(--notebg);border-radius:0 12px 12px 0;margin:20px 0}
+.quote{font-family:var(--serif);font-size:18px;border-left:3px solid var(--sage);padding:4px 0 4px 16px;margin:14px 0;color:var(--dark)}
+.exercise{background:var(--ex);border:1px solid var(--exline);border-top:5px solid var(--sage);border-radius:16px;padding:24px;margin:24px 0}
+.exercise .exhead{font-size:12px;font-weight:800;text-transform:uppercase;color:var(--sage);letter-spacing:.09em}
+.options{display:grid;gap:9px;margin:18px 0}
+.option{padding:12px 14px;border:1px solid var(--line);border-radius:10px;display:flex;gap:11px;align-items:flex-start;cursor:pointer;background:var(--paper)}
+.option:has(input:checked){background:var(--okbg);border-color:var(--sage)}
+.option.isright{border-color:var(--ok)}.option.iswrong{border-color:var(--bad);background:var(--badbg)}
+input[type=radio],input[type=checkbox]{accent-color:var(--sage);margin-top:5px;flex:none}
+.why{display:block;font-size:14px;margin-top:6px;color:var(--ink)}
+.why[hidden]{display:none!important}
+.verdict{font-weight:800;font-size:13px;margin-right:4px}
+.verdict.ok{color:var(--ok)}.verdict.no{color:var(--bad)}
+.feedback{display:none;padding:15px 18px;background:var(--fb);border-radius:11px;border-left:4px solid var(--sage);margin-top:14px}
+.feedback.show{display:block}
+.sortrow{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:12px;align-items:start;padding:12px 0;border-bottom:1px solid var(--line)}
+.sortrow select{width:100%;border:1px solid var(--fieldline);border-radius:9px;background:var(--field);padding:9px}
+.sortrow .why{grid-column:1/-1}
+.btn{border:0;border-radius:10px;background:var(--btn);color:var(--btnfg);padding:11px 17px;font-weight:700;display:inline-flex;align-items:center;gap:7px}
+.btn:hover{background:var(--btnhover)}
+.btn.alt{background:var(--btnalt);color:var(--btnaltfg);border:1px solid var(--btnaltline)}
+.btn.ghost{background:transparent;color:var(--btnaltfg);border:1px solid var(--btnaltline)}
+.btn:disabled{opacity:.45;cursor:default}
+.buttons{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}
+.accordion{border:1px solid var(--line);border-radius:12px;background:var(--paper);margin:10px 0;overflow:hidden}
+summary{cursor:pointer;font-weight:750;padding:16px 19px}
+details>div{padding:0 19px 17px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.formgrid>*{min-width:0}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-weight:700;font-size:14px}
+.field .hint{font-size:12.5px;color:var(--muted);margin-top:-2px}
+.field input,.field textarea,.field select{width:100%;border:1px solid var(--fieldline);border-radius:9px;background:var(--field);color:var(--ink);padding:10px}
+.field textarea{min-height:100px;resize:vertical}
+.wide{grid-column:1/-1}
+.fieldset{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--soft)}
+.fieldset h4{margin:0 0 10px;font-family:var(--serif);font-size:17px;color:var(--dark)}
+.groupttl{font-family:var(--serif);font-size:22px;color:var(--dark);margin:6px 0 4px}
+.reference{padding:10px 0;border-bottom:1px solid var(--line)}
+.footnote{font-size:13px;color:var(--muted)}
+.chapterhead{margin-bottom:25px}
+.chnav{display:flex;justify-content:space-between;gap:12px;margin-top:35px;border-top:1px solid var(--line);padding-top:20px}
+.progress{font-size:12px;color:var(--muted);margin:16px 7px}
+.progressbar{height:7px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:8px}
+.progressbar span{height:100%;display:block;background:var(--sage);width:0%;transition:width .2s}
+.casepick{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 16px}
+.pickbtn{border:1px solid var(--btnaltline);background:var(--btnalt);color:var(--btnaltfg);border-radius:30px;padding:8px 15px;font-weight:700;font-size:14px}
+.pickbtn[aria-pressed="true"]{background:var(--btn);color:var(--btnfg);border-color:var(--btn)}
+.confirmbox{display:none;margin:10px 0;padding:14px 16px;border:1px solid var(--bad);background:var(--badbg);border-radius:10px}
+.confirmbox.show{display:block}
+.case{border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:18px 20px}
+.case .disc{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:var(--ochre)}
+.case h3{margin:4px 0 8px;font-size:18px}
+.docbox{background:var(--paper);border:1px dashed var(--fieldline);border-radius:12px;padding:18px 20px;font-size:15px}
+.docbox h4{margin:0 0 6px;font-family:var(--serif);color:var(--dark)}
+ul{padding-left:23px}li{margin-bottom:6px}
+strong{color:var(--dark)}
+::selection{background:var(--nav)}
+@media(max-width:900px){.shell{display:block}.sidebar{position:relative;height:auto;padding-block:15px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}.nav{flex-direction:row;overflow-x:auto}.nav button{flex:0 0 auto;white-space:nowrap}.nav .navpart,.side-sub,.sidebarfoot,.progress{display:none}.brand{font-size:18px}.main{padding-block:20px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+@media(max-width:650px){.grid2,.grid3,.formgrid{grid-template-columns:1fr}.hero{padding:23px}.flow{display:grid}.arrow{transform:rotate(90deg);text-align:center}.wide{grid-column:auto}.exercise{padding:16px}.sortrow{grid-template-columns:1fr}}
+@media print{.sidebar,.buttons,.chnav,.exercise button,.confirmbox{display:none!important}.shell{display:block}.main{padding:0;max-width:none}.chapter{display:block!important;break-before:page}.panel,.card,.exercise{break-inside:avoid;box-shadow:none}a{color:inherit}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+
+<a class="skip" href="#content">Aller au contenu</a>
+<div class="shell">
+<aside class="sidebar" aria-label="Navigation du guide">
+<div class="brand">Planification de l'enseignement au collégial</div>
+<p class="small">3MED937 · Guide interactif</p>
+<div class="side-sub">Explorer</div>
+<nav class="nav" id="navigation"></nav>
+<div class="progress"><span id="seen">Exploration libre</span><div class="progressbar"><span id="progressinner"></span></div></div>
+<div class="sidebarfoot">Ressource pédagogique conçue en appui au cours 3MED937 d'Emmanuelle Aurousseau, UQAC.<br>Aucune donnée de brouillon n'est transmise à un serveur.</div>
+</aside>
+<main class="main" id="content">
+
+<!-- ============ ACCUEIL ============ -->
+<section class="chapter active" id="accueil" data-title="Accueil" data-short="Accueil">
+<div class="hero"><div class="topline">Guide interactif · 3MED937</div><h1>Planifier pour faire apprendre au collégial</h1><p class="lede">Du devis ministériel au plan de cours, puis du plan de cours à la séquence et à la séance : reconnaître ce qui est prescrit, ce qui reste à décider, et justifier chaque décision par ce que les personnes étudiantes devront réellement faire pour apprendre.</p><div class="buttons"><button class="btn" type="button" data-go="probleme">Commencer par une situation-problème →</button><button class="btn alt" type="button" data-go="atelier">Aller à l'atelier de planification</button></div></div>
+<h2>Une question traverse tout le guide</h2>
+<div class="panel accent"><p style="font:clamp(20px,2.4vw,28px)/1.4 var(--serif);margin:0;color:var(--dark)">Qu'est-ce que les personnes étudiantes devront <em>réellement faire sur le plan cognitif</em> pour développer la compétence du devis, et qu'est-ce qui permettra de le reconnaître?</p></div>
+<div class="grid3">
+<div class="card"><span class="eyebrow">Un fil rouge</span><h3>Biologie cellulaire</h3><p>Le cours de la compétence <span class="code">0B01</span> du programme <em>Sciences de la nature</em> (200.B1) sert d'exemple principal, du devis jusqu'à la séance.</p></div>
+<div class="card"><span class="eyebrow">Des cas contrastés</span><h3>Formation générale</h3><p>Une seconde situation-problème en français (<span class="code">4EF0</span>), au choix, et des cas en philosophie (<span class="code">4PH0</span>) et en français (<span class="code">4EF1</span>, <span class="code">4EF2</span>) montrent que les mêmes questions se posent autrement selon la discipline.</p></div>
+<div class="card"><span class="eyebrow">Un atelier</span><h3>Travaux 2A et 2B</h3><p>Un canevas de rédaction aligné sur vos gabarits, que l'on peut conserver, copier ou exporter pour le retravailler.</p></div>
+</div>
+<div class="note"><strong>Comment utiliser cette ressource?</strong> Les chapitres sont consultables dans n'importe quel ordre. Les étiquettes « Obj. » renvoient aux objectifs du plan de cours 3MED937. Les exemples sont didactiques : ils ne remplacent ni le devis de votre cours-cible, ni la PIEA de votre collège, ni le plan-cadre de votre département.</div>
+<h2>Carte du guide</h2>
+<div class="grid2" id="homecards"></div>
+</section>
+
+<!-- ============ SITUATION-PROBLÈME ============ -->
+<section class="chapter" id="probleme" data-title="Situation-problème" data-short="Situation-problème" data-obj="1 à 6">
+<header class="chapterhead"><div class="kicker">Entrée dans le guide</div><h1>Ils ont réussi l'examen. Savent-ils expliquer?</h1><p class="sectionintro">Un problème de cohérence à examiner maintenant, puis à revisiter à la lumière des notions du guide.</p></header>
+<div class="casepick" role="group" aria-label="Choisir une situation"><span class="small">Choisissez votre situation :</span><button type="button" class="pickbtn" data-pick="bio" aria-pressed="true">Biologie cellulaire · Sciences de la nature</button><button type="button" class="pickbtn" data-pick="fr" aria-pressed="false">Écriture et littérature · Français</button></div>
+<div data-case="fr" hidden>
+<div class="panel blue">
+<h3>Un premier cours de littérature au collégial</h3>
+<p>Au Cégep (fictif) du Haut-Plateau, le cours <em>Écriture et littérature</em> (601-101-MQ) répond à la compétence <span class="code">4EF0</span> : analyser des textes littéraires. La production attendue est une analyse littéraire. Parmi les éléments de la compétence figure <strong>relier les thèmes, la forme du texte et le courant littéraire</strong>.</p>
+<p>Pour y arriver, l'enseignante présente le romantisme et le symbolisme dans des exposés bien construits. Les personnes étudiantes reçoivent ensuite une liste de procédés stylistiques avec leurs définitions et s'exercent à les repérer dans des poèmes, chaque procédé à trouver étant indiqué dans la consigne. Des quiz de lecture vérifient qu'elles ont lu les œuvres : « Qui est le narrateur? », « Où se déroule la scène finale? ». L'examen final demande de nommer, dans un extrait inédit, cinq procédés et le courant auquel le texte appartient.</p>
+<p>Les résultats sont bons : la plupart des personnes repèrent correctement métaphores, anaphores et allitérations. Pourtant, la session suivante, un collègue qui enseigne le deuxième cours de littérature constate que leurs dissertations alignent des constats comme « il y a une métaphore à la ligne 4 » sans jamais dire ce que le procédé produit comme sens ni le relier au thème ou au courant.</p>
+</div>
+<div class="exercise"><span class="exhead">Diagnostic initial · réflexion ouverte</span><h3>Qu'est-ce que cette réussite permet de conclure?</h3>
+<div class="field"><label for="initial-fr">Votre première analyse (français)</label><textarea id="initial-fr" data-save data-group="Retour réflexif" placeholder="Que vise le devis? Que font réellement les personnes étudiantes? Que mesure l'examen? Quelles conclusions peut-on tirer, et lesquelles ne peut-on pas tirer?"></textarea></div>
+<div class="buttons"><button class="btn" type="button" data-reveal="diagfb-fr">Enregistrer mon analyse et voir des pistes</button></div>
+<div class="feedback" id="diagfb-fr"><strong>Pistes pour examiner la situation</strong><p>La réussite atteste surtout que les personnes étudiantes savent <em>reconnaître et nommer</em> des procédés, d'autant plus que la consigne leur dit lesquels chercher. Ces connaissances sont nécessaires, mais elles ne suffisent pas à montrer qu'une personne <em>analyse</em> un texte, c'est-à-dire qu'elle explique comment un procédé contribue au sens et le relie au thème et au courant. Les quiz de lecture, eux, vérifient la lecture, pas l'interprétation.</p><p>Plusieurs paliers sont en jeu. Le devis fixe la compétence et le type de production. Le département de français a peut-être une épreuve finale commune et une grille partagée. La PIEA encadre la qualité de la langue et le poids de l'épreuve finale. L'enseignante, elle, décide des activités et des traces recueillies en cours de session. Analyser la situation, c'est aussi repérer <strong>qui peut changer quoi</strong>.</p></div>
+</div>
+</div>
+<div data-case="bio">
+<div class="panel blue">
+<h3>Un cours de biologie cellulaire en première session</h3>
+<p>Au Cégep (fictif) du Haut-Plateau, le cours <em>Biologie cellulaire</em> (101-XXX-XX, pondération 2-2-2) répond à la compétence <span class="code">0B01</span> : expliquer les structures et les fonctions des cellules en tant qu'unités de base de la vie. Parmi les éléments de la compétence figure <strong>expliquer la synthèse d'une protéine fonctionnelle</strong>.</p>
+<p>Pour cet élément, l'enseignant présente deux exposés appuyés d'une animation très soignée de la transcription et de la traduction. Les personnes étudiantes complètent ensuite un tableau des étapes à l'aide d'une banque de mots. En laboratoire, elles suivent un protocole d'extraction d'ADN et remplissent un rapport préformaté. L'examen final (40 %) est un questionnaire à choix multiples de 80 questions, dont une dizaine portent sur l'élément : « Quelle enzyme synthétise l'ARNm? », « Où se déroule la traduction? ».</p>
+<p>Les résultats sont bons : 82 % du groupe réussit le cours. Pourtant, la session suivante, une collègue qui enseigne le cours d'option en biologie humaine constate que la plupart de ces personnes ne parviennent pas à prédire l'effet d'une mutation ponctuelle sur une protéine.</p>
+</div>
+<div class="exercise"><span class="exhead">Diagnostic initial · réflexion ouverte</span><h3>Qu'est-ce que cette réussite permet de conclure?</h3>
+<div class="field"><label for="initial">Votre première analyse</label><textarea id="initial" data-save data-group="Retour réflexif" placeholder="Que vise le devis? Que font réellement les personnes étudiantes? Que mesure l'examen? Quelles conclusions peut-on tirer, et lesquelles ne peut-on pas tirer?"></textarea></div>
+<div class="buttons"><button class="btn" type="button" data-reveal="diagfb">Enregistrer mon analyse et voir des pistes</button></div>
+<div class="feedback" id="diagfb"><strong>Pistes pour examiner la situation</strong><p>La réussite atteste surtout que les personnes étudiantes reconnaissent des termes et des localisations dans un format de choix multiples. Ces connaissances sont utiles, mais elles ne suffisent pas à montrer qu'une personne <em>explique</em> la synthèse d'une protéine, c'est-à-dire qu'elle relie la séquence d'ADN, l'ARNm, le code génétique, la séquence d'acides aminés et le repliement qui rend la protéine fonctionnelle.</p><p>Plusieurs paliers sont en jeu. Le devis fixe la compétence et son standard. Le département a peut-être adopté un plan-cadre et une épreuve finale commune. La PIEA du collège encadre la forme et le poids de l'épreuve finale. L'enseignant, lui, décide des activités et des traces recueillies en cours de session. Analyser la situation, c'est aussi repérer <strong>qui peut changer quoi</strong>.</p></div>
+</div>
+</div>
+<div class="panel soft"><h3>Nous y reviendrons</h3><p>Dans l'atelier, vous reprendrez cette analyse pour décrire les ruptures d'alignement, proposer des traces pertinentes et concevoir une séance mieux ajustée à l'apprentissage visé. Rien ne vous empêche d'analyser aussi l'autre situation : comparer les deux montre que le problème ne tient pas à la discipline.</p><button class="btn alt" type="button" data-go="alignement">Voir le laboratoire d'alignement →</button></div>
+</section>
+
+<!-- ============ 1 PALIERS ============ -->
+<section class="chapter" id="paliers" data-title="1 · Paliers et marges de manœuvre" data-short="Paliers et marges de manœuvre" data-obj="1" data-part="Comprendre le cadre">
+<header class="chapterhead"><div class="kicker">Chapitre 1 · Obj. 1</div><h1>Qui décide quoi?</h1><p class="sectionintro">Au collégial, la planification d'un cours se fait dans un cadre partagé. Chaque palier fixe certaines choses et en laisse d'autres ouvertes. Savoir où se trouve sa propre marge de manœuvre est la première compétence de planification.</p></header>
+<div class="tablewrap"><table class="table"><thead><tr><th>Palier</th><th>Ce qu'il détermine (exemples)</th><th>Documents à consulter</th></tr></thead><tbody>
+<tr><td><strong>Ministère</strong></td><td>Les objectifs (compétences) et les standards de la formation générale et de la formation spécifique. Pour un programme préuniversitaire, il peut aussi déterminer en tout ou en partie les activités d'apprentissage : discipline, pondération, nombre d'heures. Il peut imposer une épreuve uniforme (l'épreuve de langue d'enseignement et littérature).</td><td>Règlement sur le régime des études collégiales (RREC); programme d'études ministériel (le « devis »).</td></tr>
+<tr><td><strong>Collège</strong></td><td>La politique institutionnelle d'évaluation des apprentissages (PIEA), adoptée après consultation de la Commission des études, qui doit prévoir une épreuve synthèse propre à chaque programme. La politique d'évaluation des programmes. Pour la formation technique et la formation générale propre, les activités d'apprentissage.</td><td>PIEA, politique institutionnelle d'évaluation des programmes, grilles de cours, règles départementales.</td></tr>
+<tr><td><strong>Programme</strong></td><td>La grille de cours et le logigramme, le profil de sortie, les modalités de l'épreuve synthèse et de sa reprise, la cohérence entre les cours. Le comité de programme réunit des enseignantes et enseignants des disciplines concernées.</td><td>Cahier ou description de programme (art. 17 du RREC), devis de l'épreuve synthèse.</td></tr>
+<tr><td><strong>Département</strong></td><td>Souvent un plan-cadre qui traduit le devis pour un cours donné, le choix du matériel commun, parfois une épreuve finale commune et des règles de correction partagées. Les pratiques varient beaucoup d'un collège à l'autre.</td><td>Plan-cadre, politique départementale d'évaluation, procès-verbaux.</td></tr>
+<tr><td><strong>Personne enseignante</strong></td><td>Le plan de cours détaillé, conforme au programme (art. 20 du RREC), la progression fine, les stratégies, les activités de chaque séance, les rétroactions et les évaluations formatives, les évaluations sommatives dans le respect de la PIEA et du plan-cadre.</td><td>Plan de cours, planification de séquences et de séances.</td></tr>
+<tr><td><strong>Ressources-conseils</strong></td><td>Elles ne décident pas, mais elles éclairent les décisions : conseillère ou conseiller pédagogique, services adaptés, aide pédagogique individuelle (API), bibliothèque, services aux étudiantes et étudiants autochtones lorsqu'ils existent.</td><td>Guides institutionnels, gabarits de plan de cours, formations offertes.</td></tr>
+</tbody></table></div>
+<div class="note"><strong>Changement récent à connaître.</strong> La <em>Loi visant à réduire la bureaucratie, à accroître l'efficacité de l'État et à renforcer l'imputabilité des hauts fonctionnaires</em> (L.Q. 2026, c. 5, sanctionnée le 2 avril 2026) abroge la Loi sur la Commission d'évaluation de l'enseignement collégial (CEEC). Le mandat de ses membres a pris fin le 30 juin 2026 et ses droits et obligations sont transférés au ministère. Les collèges demeurent responsables de leurs politiques institutionnelles : vérifiez, dans votre enquête du Travail 1, comment le collège étudié s'organise depuis.</div>
+<h2>Une marge de manœuvre n'est pas une absence de règles</h2>
+<div class="grid2">
+<div class="card"><span class="eyebrow">Ce qui est fermé</span><h3>Le « quoi » et le niveau attendu</h3><p>L'énoncé de compétence, ses éléments et le standard ne se négocient pas dans un plan de cours. Un enseignant ne peut pas décider qu'un élément du devis sera « vu rapidement » s'il n'est jamais évalué.</p></div>
+<div class="card"><span class="eyebrow">Ce qui est ouvert</span><h3>Le « comment » et le « quand »</h3><p>L'ordre des apprentissages, le choix des situations, les stratégies, le rythme, l'étayage, les traces formatives. C'est dans cet espace que se joue l'essentiel du travail de planification que vous ferez dans le Travail 2.</p></div>
+</div>
+<div class="exercise sort" id="sortpaliers"><span class="exhead">Exercice · situer une décision</span><h3>À quel palier revient principalement chacune de ces décisions?</h3>
+<div class="sortrow"><span>Fixer les objectifs et le standard de la compétence 0B01.</span><select aria-label="Palier" data-answer="min"><option value="">Choisir…</option><option value="min">Ministère</option><option value="col">Collège</option><option value="dep">Programme ou département</option><option value="ens">Personne enseignante</option></select><span class="why" hidden>Le RREC confie au ministre la détermination des objectifs et des standards de la formation spécifique préuniversitaire (art. 10).</span></div>
+<div class="sortrow"><span>Adopter la politique qui encadre l'évaluation et impose une épreuve synthèse dans chaque programme.</span><select aria-label="Palier" data-answer="col"><option value="">Choisir…</option><option value="min">Ministère</option><option value="col">Collège</option><option value="dep">Programme ou département</option><option value="ens">Personne enseignante</option></select><span class="why" hidden>C'est la PIEA, adoptée par le collège après consultation de la Commission des études (art. 25 du RREC).</span></div>
+<div class="sortrow"><span>Concevoir l'épreuve synthèse de Sciences de la nature et ses modalités de reprise.</span><select aria-label="Palier" data-answer="dep"><option value="">Choisir…</option><option value="min">Ministère</option><option value="col">Collège</option><option value="dep">Programme ou département</option><option value="ens">Personne enseignante</option></select><span class="why" hidden>Le cadre vient de la PIEA, mais la conception de l'épreuve relève généralement du comité de programme, souvent dans un cours porteur de la compétence d'intégration.</span></div>
+<div class="sortrow"><span>Rédiger le plan-cadre du cours de biologie cellulaire.</span><select aria-label="Palier" data-answer="dep"><option value="">Choisir…</option><option value="min">Ministère</option><option value="col">Collège</option><option value="dep">Programme ou département</option><option value="ens">Personne enseignante</option></select><span class="why" hidden>Le plan-cadre est un document local, généralement départemental. Le RREC ne le mentionne pas : son existence et son statut varient selon les collèges.</span></div>
+<div class="sortrow"><span>Établir le plan de cours détaillé remis la première semaine.</span><select aria-label="Palier" data-answer="ens"><option value="">Choisir…</option><option value="min">Ministère</option><option value="col">Collège</option><option value="dep">Programme ou département</option><option value="ens">Personne enseignante</option></select><span class="why" hidden>Le collège a la responsabilité de le faire établir par chaque enseignant, pour chaque cours, conformément au programme (art. 20). La rédaction revient donc à la personne enseignante, dans le cadre fixé par la PIEA et le plan-cadre.</span></div>
+<div class="sortrow"><span>Choisir le moment d'une rétroaction formative sur une prédiction de mutation.</span><select aria-label="Palier" data-answer="ens"><option value="">Choisir…</option><option value="min">Ministère</option><option value="col">Collège</option><option value="dep">Programme ou département</option><option value="ens">Personne enseignante</option></select><span class="why" hidden>Décision de planification immédiate : elle relève pleinement de la marge de la personne enseignante.</span></div>
+<div class="sortrow"><span>Faire de l'épreuve uniforme de français une condition d'obtention du DEC.</span><select aria-label="Palier" data-answer="min"><option value="">Choisir…</option><option value="min">Ministère</option><option value="col">Collège</option><option value="dep">Programme ou département</option><option value="ens">Personne enseignante</option></select><span class="why" hidden>Le ministre peut imposer une épreuve uniforme dans un élément de la formation générale (art. 26 du RREC).</span></div>
+<div class="sortrow"><span>Fixer les règles sur la qualité de la langue et les retards dans la remise des travaux.</span><select aria-label="Palier" data-answer="col"><option value="">Choisir…</option><option value="min">Ministère</option><option value="col">Collège</option><option value="dep">Programme ou département</option><option value="ens">Personne enseignante</option></select><span class="why" hidden>Ces règles figurent habituellement dans la PIEA, parfois précisées par le département. L'enseignant les applique et les annonce dans son plan de cours.</span></div>
+<div class="buttons"><button class="btn" type="button" data-check-sort>Vérifier</button></div>
+<div class="feedback" aria-live="polite"></div>
+</div>
+</section>
+
+<!-- ============ 2 DEVIS ============ -->
+<section class="chapter" id="devis" data-title="2 · Lire un devis ministériel" data-short="Lire un devis" data-obj="2" data-part="Comprendre le cadre">
+<header class="chapterhead"><div class="kicker">Chapitre 2 · Obj. 2</div><h1>Ce que le devis prescrit, ce qu'il laisse ouvert</h1><p class="sectionintro">Le programme d'études ministériel, qu'on appelle couramment le devis, décrit des compétences et un niveau de performance attendu. Il ne dit presque rien de la manière d'y parvenir.</p></header>
+<h2>Les rubriques d'une fiche de compétence</h2>
+<div class="grid3">
+<div class="card"><span class="eyebrow">Code et énoncé</span><h3>La compétence</h3><p>Un code (<span class="code">0B01</span>) et un énoncé formulé à l'infinitif. Le RREC appelle « objectif » une compétence, une habileté ou une connaissance à acquérir ou à maîtriser.</p></div>
+<div class="card"><span class="eyebrow">Standard</span><h3>Le niveau attendu</h3><p>Le niveau de performance à partir duquel l'objectif est considéré comme atteint. Dans les devis récents, des critères de performance s'appliquent à l'ensemble de la compétence.</p></div>
+<div class="card"><span class="eyebrow">Éléments</span><h3>Les composantes</h3><p>Les éléments de la compétence, chacun accompagné de critères de performance précis.</p></div>
+<div class="card"><span class="eyebrow">Contexte de réalisation</span><h3>Les conditions</h3><p>Dans plusieurs devis (formation technique, formation générale), une rubrique précise les conditions dans lesquelles la compétence s'exerce : à partir de quoi, à l'aide de quoi, dans quel type de production.</p></div>
+<div class="card"><span class="eyebrow">Activités d'apprentissage</span><h3>Le cadre du cours</h3><p>Pour un programme préuniversitaire comme Sciences de la nature : discipline, pondération, nombre d'unités et de périodes, précisions sur les contenus.</p></div>
+<div class="card"><span class="eyebrow">Buts et intentions</span><h3>Le sens d'ensemble</h3><p>En tête de programme, les buts et les intentions éducatives orientent la lecture de chaque compétence.</p></div>
+</div>
+<div class="note"><strong>Toutes les fiches ne se ressemblent pas.</strong> Les rubriques varient selon la génération du devis et la composante de formation. La fiche 0B01 du programme 200.B1 (version 2021) comprend un standard, des éléments et leurs critères de performance, puis les activités d'apprentissage, sans rubrique distincte de contexte de réalisation. Repérez la structure du devis de votre cours-cible avant de l'interpréter.</div>
+<h2>Lire la pondération</h2>
+<div class="panel"><div class="flow"><div class="step"><span class="eyebrow">2</span><br><strong>heures de théorie</strong><br><span class="small">par semaine</span></div><div class="arrow" aria-hidden="true">·</div><div class="step"><span class="eyebrow">2</span><br><strong>heures de laboratoire ou de pratique</strong><br><span class="small">par semaine</span></div><div class="arrow" aria-hidden="true">·</div><div class="step"><span class="eyebrow">2</span><br><strong>heures de travail personnel</strong><br><span class="small">attendues par semaine</span></div></div>
+<p>Sur 15 semaines, une pondération 2-2-2 donne 60 périodes d'enseignement (2 + 2) et 90 heures d'activités d'apprentissage au total, soit 2 unités, une unité correspondant à 45 heures. La troisième valeur est une donnée de planification à part entière : un plan de cours qui demande huit heures de travail personnel par semaine dans un cours 2-2-2 surcharge la population étudiante, qui suit souvent six ou sept cours en parallèle.</p></div>
+<h2>Le fil rouge : la fiche 0B01</h2>
+<div class="docbox"><h4>Sciences de la nature (200.B1) · Compétence 0B01</h4>
+<p><strong>Énoncé :</strong> expliquer les structures et les fonctions des cellules en tant qu'unités de base de la vie.</p>
+<p><strong>Standard (critères applicables à l'ensemble) :</strong> emploi approprié de la terminologie; contextualisation d'applications de biotechnologies.</p>
+<p><strong>Éléments :</strong> 1. caractériser les structures et les fonctions cellulaires · 2. caractériser le cycle cellulaire · 3. caractériser les fonctions du métabolisme · 4. expliquer la synthèse d'une protéine fonctionnelle · 5. expliquer les effets de la variation génétique · 6. vérifier des concepts de biologie par une démarche expérimentale.</p>
+<p><strong>Activités d'apprentissage :</strong> biologie · pondération 2-2-2 · 2 unités · 60 périodes.</p>
+<p class="small">Formulations résumées à partir du programme ministériel (version 2021, p. 18-19). Consultez le libellé exact et les critères de performance de chaque élément dans le document officiel.</p></div>
+<div class="exercise sort" id="sortdevis"><span class="exhead">Exercice · prescription ou marge?</span><h3>Pour le cours de biologie cellulaire, chacun de ces éléments est-il prescrit par le devis ou laissé aux décisions de planification?</h3>
+<div class="sortrow"><span>Développer et évaluer l'élément « caractériser le cycle cellulaire ».</span><select aria-label="Statut" data-answer="p"><option value="">Choisir…</option><option value="p">Prescrit par le devis</option><option value="o">Laissé à la planification</option></select><span class="why" hidden>Chaque élément de la compétence doit faire l'objet d'apprentissages et contribuer au jugement sur l'atteinte de la compétence.</span></div>
+<div class="sortrow"><span>La pondération 2-2-2 du cours.</span><select aria-label="Statut" data-answer="p"><option value="">Choisir…</option><option value="p">Prescrit par le devis</option><option value="o">Laissé à la planification</option></select><span class="why" hidden>Dans ce programme préuniversitaire, le ministre précise les activités d'apprentissage, dont la pondération.</span></div>
+<div class="sortrow"><span>L'ordre dans lequel les six éléments sont abordés.</span><select aria-label="Statut" data-answer="o"><option value="">Choisir…</option><option value="p">Prescrit par le devis</option><option value="o">Laissé à la planification</option></select><span class="why" hidden>La numérotation des éléments n'impose pas une progression. L'ordre est une décision didactique, parfois balisée par le plan-cadre.</span></div>
+<div class="sortrow"><span>Tenir compte de l'emploi approprié de la terminologie dans le jugement.</span><select aria-label="Statut" data-answer="p"><option value="">Choisir…</option><option value="p">Prescrit par le devis</option><option value="o">Laissé à la planification</option></select><span class="why" hidden>Il s'agit d'un critère du standard : il s'applique à l'ensemble de la compétence.</span></div>
+<div class="sortrow"><span>Recourir à des études de cas sur des thérapies géniques pour contextualiser les biotechnologies.</span><select aria-label="Statut" data-answer="o"><option value="">Choisir…</option><option value="p">Prescrit par le devis</option><option value="o">Laissé à la planification</option></select><span class="why" hidden>Le standard exige la contextualisation d'applications de biotechnologies. Le choix des cas et de la formule pédagogique reste ouvert.</span></div>
+<div class="sortrow"><span>Le nombre, la forme et le poids des évaluations sommatives.</span><select aria-label="Statut" data-answer="o"><option value="">Choisir…</option><option value="p">Prescrit par le devis</option><option value="o">Laissé à la planification</option></select><span class="why" hidden>Le devis ne les fixe pas. Ils sont encadrés par la PIEA et souvent par le département, puis précisés dans le plan de cours.</span></div>
+<div class="sortrow"><span>Vérifier des concepts de biologie par une démarche expérimentale.</span><select aria-label="Statut" data-answer="p"><option value="">Choisir…</option><option value="p">Prescrit par le devis</option><option value="o">Laissé à la planification</option></select><span class="why" hidden>C'est l'élément 6. Le choix des expériences, lui, reste ouvert.</span></div>
+<div class="sortrow"><span>Le manuel de référence.</span><select aria-label="Statut" data-answer="o"><option value="">Choisir…</option><option value="p">Prescrit par le devis</option><option value="o">Laissé à la planification</option></select><span class="why" hidden>Choix local, souvent départemental.</span></div>
+<div class="buttons"><button class="btn" type="button" data-check-sort>Vérifier</button></div>
+<div class="feedback" aria-live="polite"></div>
+</div>
+<h2>Cas contrastés : la formation générale</h2>
+<div class="grid2">
+<div class="case"><span class="disc">Philosophie · formation générale commune</span><h3>4PH0 · Traiter d'une question philosophique</h3><p>Cours <em>Philosophie et rhétorique</em> (340-101-MQ). Les éléments portent notamment sur la distinction entre réponse philosophique, scientifique ou religieuse, sur la contribution des philosophes de l'Antiquité et sur les règles de l'argumentation (thèse, arguments, objection, réfutation).</p><p class="small">Ici, le « MQ » signale un cours dont les activités d'apprentissage sont déterminées par le ministère et communes à tous les collèges. La marge porte sur les œuvres, les questions et les stratégies.</p></div>
+<div class="case"><span class="disc">Français · formation générale commune</span><h3>4EF1 · Expliquer les représentations du monde</h3><p>Cours de littérature (601-102-MQ) qui conduit à une dissertation explicative portant sur des textes d'époques et de genres variés. Le type de production attendu fait partie de la compétence et prépare l'épreuve uniforme.</p><p class="small">Contraste utile : la forme de la production est en partie prescrite, alors qu'en biologie le devis laisse ouvert le format des évaluations.</p></div>
+</div>
+<p class="small">Formulations résumées. Pour la formation générale, consultez l'annexe du programme ministériel de votre cours-cible : les objectifs de formation générale y sont reproduits.</p>
+</section>
+
+<!-- ============ 3 PROGRAMME ============ -->
+<section class="chapter" id="programme" data-title="3 · Approche-programme" data-short="Approche-programme" data-obj="2" data-part="Comprendre le cadre">
+<header class="chapterhead"><div class="kicker">Chapitre 3 · Obj. 2</div><h1>Situer un cours dans son programme</h1><p class="sectionintro">Un cours contribue à un programme. Le planifier sans regarder ce qui le précède et ce qui le suit, c'est risquer de répéter, de présupposer des acquis absents ou d'oublier ce que d'autres cours attendent de lui.</p></header>
+<h2>Les buts du programme Sciences de la nature</h2>
+<div class="panel"><p>Le programme 200.B1 (version 2021, implantation obligatoire depuis l'automne 2024) formule six buts. Au terme de ses études, la personne diplômée saura notamment :</p>
+<ul><li>exploiter les savoirs disciplinaires permettant la consolidation et l'enrichissement d'une culture scientifique de base;</li><li>traiter de situations complexes dans une perspective d'interdisciplinarité;</li><li>apprécier les liens unissant les sciences, les technologies et la société;</li><li>faire preuve de sens critique et de rigueur intellectuelle;</li><li>utiliser les technologies numériques dans un contexte scientifique;</li><li>développer un esprit de collaboration et communiquer.</li></ul>
+<p class="small">Ces buts ne sont pas évalués directement dans chaque cours, mais ils orientent les choix : un cours de biologie cellulaire qui ne fait jamais travailler en équipe ni traiter de données numériques contribue peu à deux de ces buts.</p></div>
+<h2>Quatre questions pour situer le cours-cible</h2>
+<div class="grid2">
+<div class="card"><span class="eyebrow">Avant</span><h3>Quels acquis puis-je supposer?</h3><p>Préalables absolus ou relatifs, cours de la même session, formation reçue au secondaire. En biologie cellulaire, première session, on ne peut pas supposer la chimie des solutions, qui vient plus tard.</p></div>
+<div class="card"><span class="eyebrow">Après</span><h3>Qu'attendent les cours suivants?</h3><p>Le cours d'écologie (<span class="code">0B02</span>), le cours d'option sur le corps humain (<span class="code">0B0F</span>) et la chimie organique s'appuient sur la cellule, le métabolisme et la synthèse des protéines.</p></div>
+<div class="card"><span class="eyebrow">À côté</span><h3>Avec quels cours dialoguer?</h3><p>Le cours de méthodes statistiques (<span class="code">0M01</span>) peut traiter les données du laboratoire. La philosophie peut éclairer les enjeux éthiques des biotechnologies du standard.</p></div>
+<div class="card"><span class="eyebrow">Au terme</span><h3>Que mobilisera l'épreuve synthèse?</h3><p>La compétence <span class="code">0NTC</span>, « démontrer l'intégration de ses acquis en Sciences de la nature », est généralement portée par un projet intégrateur en fin de programme. Elle mobilise aussi la formation générale : lecture de textes scientifiques, réflexion philosophique, communication écrite et orale.</p></div>
+</div>
+<div class="note"><strong>Grille, logigramme, profil de sortie.</strong> La grille de cours indique la session de chaque cours; le logigramme montre les liens de préalables et de progression; le profil de sortie décrit la personne diplômée. Demandez ces documents au collège étudié dans le Travail 1 : ils ne sont pas publiés partout de la même façon.</div>
+<div class="exercise"><span class="exhead">Application · votre cours-cible</span><h3>Situez votre cours dans son programme</h3>
+<div class="formgrid"><div class="field"><label for="p-avant">Ce qui précède (préalables, acquis supposés)</label><textarea id="p-avant" data-save data-group="Approche-programme" placeholder="Cours préalables, formation du secondaire, cours de la même session…"></textarea></div><div class="field"><label for="p-apres">Ce qui suit (cours qui s'appuient sur le mien, épreuve synthèse)</label><textarea id="p-apres" data-save data-group="Approche-programme" placeholder="Cours suivants, projet intégrateur, stages…"></textarea></div></div>
+</div>
+</section>
+
+<!-- ============ 4 PLAN DE COURS ============ -->
+<section class="chapter" id="plancours" data-title="4 · Analyser un plan de cours" data-short="Analyser un plan de cours" data-obj="3" data-part="Analyser le long terme">
+<header class="chapterhead"><div class="kicker">Chapitre 4 · Obj. 3 · Travail 2A</div><h1>Porter un jugement sur une planification à long terme</h1><p class="sectionintro">Analyser un plan de cours existant, c'est reconstituer les décisions qu'il contient et les confronter au devis, au programme et à ce que l'on sait de l'apprentissage.</p></header>
+<h2>Ce que le plan de cours doit contenir</h2>
+<div class="panel"><p>L'article 20 du RREC confie au collège la responsabilité de faire établir, par chaque enseignant et pour chaque cours, un plan détaillé conforme au programme. Il comprend les objectifs du cours, le contenu, des indications méthodologiques, une médiagraphie, les modalités de participation et les modalités d'évaluation des apprentissages. Il est remis au début de chaque cours. La PIEA et le gabarit du collège ajoutent souvent d'autres rubriques.</p></div>
+<h2>Cinq angles d'analyse</h2>
+<div class="tablewrap"><table class="table"><thead><tr><th>Angle</th><th>Questions à poser</th></tr></thead><tbody>
+<tr><td><strong>Conformité</strong></td><td>Tous les éléments de la compétence sont-ils couverts et évalués? Le standard est-il pris en compte? Le plan respecte-t-il la PIEA et le plan-cadre?</td></tr>
+<tr><td><strong>Progression</strong></td><td>L'ordre des contenus tient-il compte des préalables et des obstacles prévisibles? Les apprentissages se complexifient-ils? Y a-t-il des occasions de réinvestissement?</td></tr>
+<tr><td><strong>Alignement</strong></td><td>Les activités sollicitent-elles le travail cognitif que vise la compétence? Les évaluations recueillent-elles des traces de ce travail?</td></tr>
+<tr><td><strong>Charge et rythme</strong></td><td>La charge de travail personnel respecte-t-elle la pondération? Les échéances s'accumulent-elles avec celles des autres cours de la session?</td></tr>
+<tr><td><strong>Évaluation</strong></td><td>L'épreuve finale porte-t-elle sur la compétence dans son ensemble? Les évaluations formatives précèdent-elles les sommatives? Les critères sont-ils communiqués?</td></tr>
+</tbody></table></div>
+<h2>Exercice sur un plan de cours fictif</h2>
+<div class="docbox"><h4>Extrait · Biologie cellulaire (101-XXX-XX) · 2-2-2</h4>
+<p><strong>Semaines 1 à 4 :</strong> structures et fonctions cellulaires; membrane et transport. <strong>Semaines 5 à 7 :</strong> métabolisme (respiration cellulaire, photosynthèse). <strong>Semaines 8 à 10 :</strong> cycle cellulaire, mitose, méiose. <strong>Semaines 11 à 13 :</strong> ADN, transcription, traduction. <strong>Semaines 14 et 15 :</strong> révision et examen final.</p>
+<p><strong>Laboratoires :</strong> neuf séances; protocoles fournis; rapports préformatés à compléter pendant la séance.</p>
+<p><strong>Évaluations :</strong> examen 1, semaine 5 (20 %) · examen 2, semaine 10 (20 %) · rapports de laboratoire (20 %) · examen final, semaine 15 (40 %), choix multiples sur l'ensemble de la matière.</p>
+<p><strong>Travail personnel :</strong> lecture de 30 à 40 pages du manuel par semaine, exercices de fin de chapitre et une affiche scientifique réalisée hors classe en semaine 13.</p></div>
+<div class="exercise multi"><span class="exhead">Analyse · repérer les failles</span><h3>Quels constats sont justifiés au regard du devis 0B01 et des repères de ce chapitre? Cochez tout ce qui s'applique.</h3>
+<div class="options">
+<label class="option"><input type="checkbox" data-correct="1"> <span>L'élément « expliquer les effets de la variation génétique » n'apparaît nulle part dans le calendrier.<span class="why" hidden>Juste. Un élément du devis est absent : c'est un problème de conformité, pas seulement de choix.</span></span></label>
+<label class="option"><input type="checkbox" data-correct="1"> <span>Le critère du standard sur la contextualisation des biotechnologies n'est jamais travaillé.<span class="why" hidden>Juste. Le standard s'applique à l'ensemble de la compétence; aucune activité ni évaluation ne le prend en charge.</span></span></label>
+<label class="option"><input type="checkbox" data-correct="1"> <span>Un examen final à choix multiples ne permet guère de juger d'une capacité à expliquer.<span class="why" hidden>Juste. L'énoncé de compétence est « expliquer ». Des questions à choix multiples bien construites peuvent sonder certains raisonnements, mais un examen entièrement fermé sur l'ensemble de la matière donne peu accès à l'explication.</span></span></label>
+<label class="option"><input type="checkbox" data-correct="1"> <span>Les rapports préformatés limitent les traces de la démarche expérimentale exigée par l'élément 6.<span class="why" hidden>Juste. Une démarche expérimentale suppose des décisions : question, hypothèse, traitement et interprétation des données. Un rapport à trous en montre peu.</span></span></label>
+<label class="option"><input type="checkbox" data-correct="1"> <span>La charge de travail personnel dépasse vraisemblablement les deux heures par semaine prévues.<span class="why" hidden>Juste. Trente à quarante pages de manuel, les exercices et une affiche hors classe excèdent ce que permet une pondération 2-2-2.</span></span></label>
+<label class="option"><input type="checkbox" data-correct="0"> <span>Commencer par les structures cellulaires avant le métabolisme est une erreur de progression.<span class="why" hidden>Pas nécessairement. Cet ordre est défendable : on caractérise les organites avant d'expliquer les fonctions qu'ils accueillent. D'autres ordres le sont aussi.</span></span></label>
+<label class="option"><input type="checkbox" data-correct="0"> <span>Le recours à un manuel unique rend le plan non conforme.<span class="why" hidden>Non. Le choix du matériel relève du département ou de l'enseignant; il n'est pas une question de conformité.</span></span></label>
+</div>
+<div class="buttons"><button class="btn" type="button" data-check-multi>Vérifier</button></div>
+<div class="feedback" aria-live="polite"></div>
+</div>
+<div class="panel soft"><h3>Du constat à l'ajustement argumenté</h3><p>Un constat ne suffit pas pour le Travail 2A. Il faut proposer un ajustement et le justifier. Par exemple : « Placer la synthèse des protéines avant le cycle cellulaire permet d'expliquer ensuite la variation génétique et ses effets à partir de la relation gène-protéine; remplacer une partie de l'examen final par des questions à développement courtes donne accès aux explications. » Précisez aussi <strong>qui</strong> peut décider de cet ajustement : vous, le département ou le comité de programme.</p></div>
+</section>
+
+<!-- ============ 5 ÉCHELLES ============ -->
+<section class="chapter" id="echelles" data-title="5 · Session, séquence, séance" data-short="Session, séquence, séance" data-obj="4" data-part="Planifier le moyen et le court terme">
+<header class="chapterhead"><div class="kicker">Chapitre 5 · Obj. 4</div><h1>Planifier à trois échelles</h1><p class="sectionintro">Le plan de cours organise la session. À l'intérieur, une séquence regroupe des séances autour d'apprentissages précis. Chaque décision doit rester au service d'une progression.</p></header>
+<div class="grid3">
+<div class="card"><span class="tag">Long terme</span><h3>Session</h3><p>Le plan de cours : parties du cours, échéancier, évaluations, répartition des éléments de la compétence sur quinze semaines.</p></div>
+<div class="card"><span class="tag">Moyen terme</span><h3>Séquence</h3><p>Une partie du cours, de deux à cinq semaines par exemple, construite autour d'une intention et d'objectifs de séquence. C'est l'objet de l'organigramme du Travail 2A.</p></div>
+<div class="card"><span class="tag">Court terme</span><h3>Séance</h3><p>Une rencontre de cours ou de laboratoire, avec ses objectifs, son déroulement minuté et la répartition des actions. C'est la planification immédiate du Travail 2B.</p></div>
+</div>
+<div class="note"><strong>À ne pas confondre.</strong> Une séquence n'est pas une addition de séances, et une séance n'est pas une liste de tâches. La question est toujours : <em>comment chaque moment contribue-t-il à construire les apprentissages attendus?</em></div>
+<h2>Contextualisation, réalisation, intégration</h2>
+<p>Dans votre gabarit de planification, ces trois phases apparaissent au niveau de la séquence et de la séance. Ce sont des <strong>fonctions pédagogiques souples</strong>, ni une recette universelle ni trois parts égales de temps.</p>
+<div class="grid3">
+<div class="card"><span class="eyebrow">Contextualiser</span><h3>Donner sens et préparer</h3><p>Situer l'enjeu, réactiver des acquis, faire émerger des conceptions, poser un problème qui crée le besoin d'apprendre.</p><p class="small">Exemple : « Pourquoi une seule lettre changée dans un gène peut-elle rendre l'hémoglobine moins efficace? »</p></div>
+<div class="card"><span class="eyebrow">Réaliser</span><h3>Construire et mobiliser</h3><p>Exposer, modéliser, pratiquer, analyser, expérimenter, discuter, recevoir des rétroactions, faire évoluer ses explications.</p><p class="small">Peut comprendre de l'enseignement structuré et direct.</p></div>
+<div class="card"><span class="eyebrow">Intégrer</span><h3>Structurer et réinvestir</h3><p>Mettre des idées en relation, revenir sur une conception initiale, produire une synthèse personnelle, transférer de façon justifiée.</p><p class="small">Ne se réduit pas au résumé final de l'enseignant.</p></div>
+</div>
+<h2>Une séquence du fil rouge</h2>
+<div class="panel"><p><strong>Séquence « Du gène à la protéine fonctionnelle » (semaines 8 à 10)</strong>, qui couvre les éléments 4 et 5 de la compétence 0B01.</p>
+<div class="flow"><div class="step"><span class="eyebrow">Contextualiser · séance 1</span><br>Cas de l'anémie falciforme : formuler des hypothèses sur le lien entre une modification de l'ADN et une protéine défaillante.</div><div class="arrow" aria-hidden="true">→</div><div class="step"><span class="eyebrow">Réaliser · séances 2 à 5</span><br>Transcription, code génétique, traduction, repliement; laboratoire d'électrophorèse; prédictions de mutations avec rétroaction.</div><div class="arrow" aria-hidden="true">→</div><div class="step"><span class="eyebrow">Intégrer · séance 6</span><br>Revenir aux hypothèses initiales; expliquer par écrit un nouveau cas de mutation; débattre d'une thérapie génique.</div></div>
+<p>À l'intérieur de la phase de réalisation, chaque séance peut elle-même commencer par une contextualisation, proposer des activités de réalisation et se terminer par une intégration partielle.</p></div>
+<h2>Les deux gabarits</h2>
+<div class="grid2">
+<div class="card"><span class="eyebrow">Gabarit de didactique</span><h3>Niveau macro puis fiches de séances</h3><p>IP et OP de la séquence, description rapide des trois phases, puis pour chaque cours : IP, objectifs (Bloom), et un tableau par phase avec le temps, les actions de l'enseignant, les actions des personnes étudiantes et le matériel.</p></div>
+<div class="card"><span class="eyebrow">Modèle du Cégep de Chicoutimi</span><h3>Planification par objectif d'apprentissage</h3><p>Énoncé et éléments de la compétence, puis pour chaque objectif : type d'habileté, balises de contenu, démarche pédagogique (activités d'apprentissage et d'enseignement), évaluation formative ou sommative, durée et aménagement.</p></div>
+</div>
+<p>Les deux gabarits posent les mêmes questions de fond. Le premier rend visible la répartition entre l'enseignant et les personnes étudiantes; le second relie chaque objectif à un type d'habileté et à un lieu (classe, laboratoire). L'atelier reprend les rubriques des deux.</p>
+<div class="exercise quiz" data-answer="b"><span class="exhead">Analyser une fonction pédagogique</span><h3>À la fin de la séquence, la classe revient sur ses hypothèses de la première séance et les reformule. Quelle fonction est principalement visée?</h3>
+<div class="options"><label class="option"><input type="radio" name="qphase" value="a"> Contextualiser, parce qu'on parle d'hypothèses.</label><label class="option"><input type="radio" name="qphase" value="b"> Intégrer, parce que les personnes étudiantes revisitent et structurent leurs apprentissages.</label><label class="option"><input type="radio" name="qphase" value="c"> Aucune, une activité ne peut pas avoir de fonction précise.</label></div>
+<button class="btn" type="button" data-check-quiz>Vérifier</button><div class="feedback" aria-live="polite"></div>
+<div class="explain" hidden>Le retour aux hypothèses initiales participe surtout à l'intégration : expliciter ce qui a changé, consolider, mettre en relation. Selon son usage, cette activité peut aussi jouer un rôle de régulation formative.</div></div>
+</section>
+
+<!-- ============ 6 OBJECTIFS ============ -->
+<section class="chapter" id="objectifs" data-title="6 · Intentions, objectifs, Bloom" data-short="Intentions, objectifs, Bloom" data-obj="4" data-part="Planifier le moyen et le court terme">
+<header class="chapterhead"><div class="kicker">Chapitre 6 · Obj. 4</div><h1>Du devis à l'objectif d'apprentissage</h1><p class="sectionintro">Un élément de compétence n'est pas un objectif de séance. Entre les deux, la personne enseignante traduit, découpe et précise.</p></header>
+<div class="grid2">
+<div class="card"><span class="eyebrow">Intention pédagogique · regard enseignant</span><h3>Quel apprentissage cherche-t-on à faire construire?</h3><p>« Amener les personnes étudiantes à… » désigne une visée d'enseignement, orientée vers les apprentissages attendus et les moyens de les soutenir.</p></div>
+<div class="card"><span class="eyebrow">Objectif d'apprentissage · regard étudiant</span><h3>Que devra faire la personne pour montrer cet apprentissage?</h3><p>« La personne étudiante sera capable de… » associe une action, un contenu et, lorsque nécessaire, des conditions ou des critères.</p></div>
+</div>
+<h2>Trois niveaux à ne pas confondre</h2>
+<div class="flow"><div class="step"><span class="eyebrow">Devis · élément</span><br><strong>Expliquer la synthèse d'une protéine fonctionnelle</strong><br><span class="small">Visée de fin de cours, avec ses critères de performance.</span></div><div class="arrow" aria-hidden="true">→</div><div class="step"><span class="eyebrow">Séquence · objectif</span><br><strong>Expliquer comment une mutation de l'ADN peut modifier la fonction d'une protéine</strong><br><span class="small">Visée de quelques semaines.</span></div><div class="arrow" aria-hidden="true">→</div><div class="step"><span class="eyebrow">Séance · objectif</span><br><strong>À partir d'une séquence d'ADN et du tableau du code génétique, prédire la séquence d'acides aminés correspondante et l'effet d'une substitution</strong><br><span class="small">Visée d'une rencontre, observable.</span></div></div>
+<div class="note"><strong>Un critère de performance n'est pas un objectif de séance.</strong> Recopier « explication juste de la synthèse » dans la case objectif d'une séance ne dit ni ce que les personnes feront ce jour-là, ni ce qu'elles sauront faire de plus en sortant.</div>
+<h2>Bloom : comprendre le travail cognitif demandé</h2>
+<p>La taxonomie révisée de Bloom aide à caractériser les opérations cognitives sollicitées. Elle n'est ni une liste obligatoire de verbes ni une échelle qui fixerait la complexité d'une activité.</p>
+<div class="grid3">
+<div class="card"><span class="tag">1</span><h3>Mémoriser</h3><p>Reconnaître, rappeler ou retrouver une connaissance.</p></div>
+<div class="card"><span class="tag">2</span><h3>Comprendre</h3><p>Construire du sens : reformuler, illustrer, inférer, comparer, expliquer.</p></div>
+<div class="card"><span class="tag">3</span><h3>Appliquer</h3><p>Mettre en œuvre une procédure ou utiliser une connaissance dans une situation.</p></div>
+<div class="card"><span class="tag">4</span><h3>Analyser</h3><p>Distinguer des éléments, examiner leur organisation et leurs relations.</p></div>
+<div class="card"><span class="tag">5</span><h3>Évaluer</h3><p>Porter un jugement à l'aide de critères et le justifier.</p></div>
+<div class="card"><span class="tag">6</span><h3>Créer</h3><p>Concevoir une production nouvelle et cohérente selon des contraintes.</p></div>
+</div>
+<h2>Le type d'habileté du modèle de Chicoutimi</h2>
+<div class="tablewrap"><table class="table"><thead><tr><th>Type d'habileté</th><th>Exemple en biologie cellulaire</th><th>Exemple en formation générale</th></tr></thead><tbody>
+<tr><td><strong>Savoir</strong></td><td>Nommer les étapes de la traduction et le rôle des ARNt.</td><td>Situer un courant littéraire dans son époque.</td></tr>
+<tr><td><strong>Savoir-faire cognitif</strong></td><td>Prédire l'effet d'une mutation sur une séquence d'acides aminés.</td><td>Reconstruire la structure d'un argument dans un dialogue de Platon.</td></tr>
+<tr><td><strong>Savoir-faire psychomoteur</strong></td><td>Charger un gel d'électrophorèse avec une micropipette.</td><td>En éducation physique, exécuter une technique de façon sécuritaire.</td></tr>
+<tr><td><strong>Savoir-faire perceptuel</strong></td><td>Reconnaître les phases de la mitose au microscope.</td><td>Repérer à l'oreille les procédés rythmiques d'un poème lu.</td></tr>
+<tr><td><strong>Savoir-être</strong></td><td>Respecter les règles de sécurité et la rigueur dans la consignation des données.</td><td>Accueillir une objection sans la disqualifier.</td></tr>
+<tr><td><strong>Savoir-agir</strong></td><td>Décider d'un protocole pour vérifier une hypothèse et justifier ce choix.</td><td>Prendre position sur un enjeu éthique et défendre sa position.</td></tr>
+</tbody></table></div>
+<p class="small">Les deux outils se complètent : Bloom caractérise l'opération cognitive, le type d'habileté situe la nature de l'apprentissage. Ni l'un ni l'autre ne se déduit mécaniquement du verbe.</p>
+<div class="panel blue"><h3>Une démarche en deux temps, puis une formulation intégrée</h3><p><strong>Pour apprendre à planifier :</strong> formuler d'abord l'objectif, puis préciser séparément les manifestations attendues et les traces à recueillir.</p><p><strong>Avec l'expérience :</strong> intégrer ces précisions dans un objectif plus complet.</p><p><em>Exemple intégré :</em> « À partir d'un cas de mutation non vu en classe, la personne étudiante expliquera par écrit comment la substitution d'un nucléotide modifie la séquence d'acides aminés et, par conséquent, la structure et la fonction de la protéine, en employant la terminologie appropriée. »</p></div>
+<div class="exercise quiz" data-answer="b"><span class="exhead">Exercice · distinguer le verbe du raisonnement</span><h3>Deux examens demandent d'« expliquer » la traduction. Quel élément permet surtout d'apprécier l'exigence cognitive?</h3>
+<div class="options"><label class="option"><input type="radio" name="qbloom" value="a"> Le verbe « expliquer », qui correspond à un niveau fixe de la taxonomie.</label><label class="option"><input type="radio" name="qbloom" value="b"> La situation proposée, les ressources accessibles, le raisonnement exigé et les traces attendues.</label><label class="option"><input type="radio" name="qbloom" value="c"> Le nombre de lignes prévues pour la réponse.</label></div>
+<button class="btn" type="button" data-check-quiz>Vérifier</button><div class="feedback" aria-live="polite"></div>
+<div class="explain" hidden>Réciter une explication vue en classe et expliquer un cas nouveau ne demandent pas le même travail. La complexité résulte de la tâche réelle, de ce qui est fourni, des liens à construire et des critères de réussite.</div></div>
+<details class="accordion"><summary>Cas contrasté : un objectif en philosophie (4PH0)</summary><div><p><strong>IP :</strong> amener les personnes étudiantes à appliquer les règles de l'argumentation propre à la philosophie.</p><p><strong>OP de séance :</strong> à partir d'un extrait de <em>l'Apologie de Socrate</em>, la personne étudiante reconstruira l'argument principal (thèse et raisons), formulera une objection pertinente et proposera une réfutation.</p><p><strong>Manifestations :</strong> une thèse correctement identifiée; des raisons distinguées de la thèse; une objection qui vise réellement l'argument; une réfutation qui répond à l'objection plutôt qu'à une version affaiblie.</p><p><strong>Nuance Bloom :</strong> reconstruire relève surtout d'analyser; formuler et réfuter une objection mobilise aussi évaluer.</p></div></details>
+</section>
+
+<!-- ============ 7 TRACES ============ -->
+<section class="chapter" id="traces" data-title="7 · Manifestations, traces, activité cognitive" data-short="Manifestations et traces" data-obj="4" data-part="Planifier le moyen et le court terme">
+<header class="chapterhead"><div class="kicker">Chapitre 7 · Obj. 4</div><h1>Ce que l'enseignant fait, ce que la personne apprend</h1><p class="sectionintro">Une activité cognitive n'est pas directement visible. Nous inférons les apprentissages à partir de productions, d'actions et de propos. Un dispositif engageant ne garantit pas à lui seul un apprentissage.</p></header>
+<div class="flow"><div class="step"><strong>Apprentissage visé</strong><br>Ce que la personne doit construire.</div><div class="arrow" aria-hidden="true">→</div><div class="step"><strong>Manifestations attendues</strong><br>Ce qui caractérise cet apprentissage lorsqu'il est mobilisé.</div><div class="arrow" aria-hidden="true">→</div><div class="step"><strong>Traces disponibles</strong><br>Écrits, schémas, propos, gestes de laboratoire, données.</div><div class="arrow" aria-hidden="true">→</div><div class="step"><strong>Interprétation</strong><br>Ce qu'on peut raisonnablement conclure, et ce qu'on ne peut pas conclure.</div></div>
+<h2>Exemple : expliquer la synthèse d'une protéine fonctionnelle</h2>
+<div class="tablewrap"><table class="table"><thead><tr><th>Manifestation attendue</th><th>Traces possibles</th><th>Limite d'interprétation</th></tr></thead><tbody>
+<tr><td>Relier la séquence d'ADN à l'ARNm par la complémentarité des bases.</td><td>Transcription d'une séquence fournie, avec le brin matrice identifié.</td><td>Une transcription correcte peut être mécanique si le rôle du brin matrice n'est pas expliqué.</td></tr>
+<tr><td>Utiliser le code génétique pour passer des codons aux acides aminés.</td><td>Traduction annotée, repérage du codon d'initiation et du codon d'arrêt.</td><td>Lire un tableau n'atteste pas que la personne comprend pourquoi le code est lu par triplets.</td></tr>
+<tr><td>Relier la séquence d'acides aminés au repliement et à la fonction.</td><td>Explication écrite ou schéma commenté d'un cas de mutation.</td><td>Dire « la protéine ne marche plus » reste insuffisant sans le lien avec la structure.</td></tr>
+<tr><td>Distinguer mutation silencieuse, faux-sens et non-sens et en prévoir les effets.</td><td>Prédictions justifiées sur trois séquences modifiées.</td><td>Une bonne réponse sur trois cas fournis n'assure pas le transfert à un cas réel.</td></tr>
+</tbody></table></div>
+<div class="note"><strong>Trois distinctions.</strong> Une <em>manifestation</em> est ce qu'on cherche à reconnaître dans la compréhension ou l'action; une <em>trace</em> est le support concret qui permet de l'observer; un <em>critère</em> sert ensuite à juger la qualité de ce qui est manifesté.</div>
+<h2>Déjouer les apparences</h2>
+<div class="grid2">
+<div class="card"><span class="eyebrow">Situation A</span><h3>L'animation spectaculaire</h3><p>Une animation 3D montre les ribosomes en action. La classe est captivée, plusieurs personnes posent des questions.</p><p><strong>Question :</strong> ont-elles dû prédire, relier ou justifier quoi que ce soit?</p></div>
+<div class="card"><span class="eyebrow">Situation B</span><h3>Le schéma fautif</h3><p>Les personnes reçoivent un schéma de la traduction comportant deux erreurs. En équipe, elles les repèrent, les corrigent et justifient leurs corrections.</p><p><strong>Question :</strong> quels concepts et quelles relations doivent-elles mobiliser pour réussir?</p></div>
+</div>
+<div class="panel accent"><p><strong>Le contraste ne porte pas sur le support.</strong> L'animation peut devenir très formatrice si on l'arrête pour demander une prédiction; le schéma peut aussi ne demander qu'une copie. Il faut examiner <em>l'action cognitive réellement requise</em>.</p></div>
+<h2>Préciser les actions dans la fiche de séance</h2>
+<div class="tablewrap"><table class="table"><thead><tr><th>Dans un plan trop vague</th><th>Questions pour préciser</th><th>Formulation plus éclairante</th></tr></thead><tbody>
+<tr><td>« Les étudiants écoutent l'exposé. »</td><td>Que doivent-ils discerner, relier ou reformuler?</td><td>« Après chaque étape de l'exposé, les personnes prédisent l'étape suivante et comparent leur prédiction à celle d'un pair. »</td></tr>
+<tr><td>« Laboratoire d'électrophorèse. »</td><td>Quelle question? Quelles décisions? Quelles données? Quelle interprétation?</td><td>« Les équipes interprètent les bandes obtenues pour déterminer quel échantillon porte la mutation et justifient leur conclusion. »</td></tr>
+<tr><td>« Discussion sur la thérapie génique. »</td><td>Qu'apporte chacun et comment justifie-t-il?</td><td>« Chaque équipe défend une position à l'aide de deux arguments scientifiques et d'un argument éthique, puis répond à une objection. »</td></tr>
+<tr><td>« Lecture d'un texte de Platon. » (philosophie)</td><td>Qu'est-ce qu'on cherche dans le texte?</td><td>« Les personnes repèrent la thèse et les objections que Socrate anticipe, puis les reformulent dans un schéma argumentatif. »</td></tr>
+</tbody></table></div>
+<p>Le rôle de l'enseignant reste essentiel : expliquer, modéliser, questionner, sélectionner des ressources, organiser l'étayage, guider la pratique, recueillir des traces et réguler. L'enjeu n'est pas d'effacer son action, mais d'analyser comment elle rend possible l'activité cognitive des personnes étudiantes.</p>
+<div class="exercise quiz" data-answer="b"><span class="exhead">Exercice · faire une inférence raisonnable</span><h3>Une personne réussit les dix questions à choix multiples sur la traduction. Que peut-on conclure avec le plus de prudence?</h3>
+<div class="options"><label class="option"><input type="radio" name="qtrace" value="a"> Elle sait expliquer la synthèse d'une protéine fonctionnelle.</label><label class="option"><input type="radio" name="qtrace" value="b"> Elle reconnaît les bonnes réponses parmi celles proposées, dans ce format.</label><label class="option"><input type="radio" name="qtrace" value="c"> Elle est incapable de construire une explication.</label></div>
+<button class="btn" type="button" data-check-quiz>Vérifier</button><div class="feedback" aria-live="polite"></div>
+<div class="explain" hidden>La trace autorise une conclusion limitée. Elle ne prouve ni la capacité d'expliquer ni son absence : pour en savoir plus, il faut demander d'autres manifestations.</div></div>
+</section>
+
+<!-- ============ 8 ALIGNEMENT ============ -->
+<section class="chapter" id="alignement" data-title="8 · Alignement et planification à rebours" data-short="Alignement et rebours" data-obj="3 et 4" data-part="Planifier le moyen et le court terme">
+<header class="chapterhead"><div class="kicker">Chapitre 8 · Obj. 3 et 4</div><h1>Conserver l'exigence cognitive</h1><p class="sectionintro">La cohérence ne se résume pas à retrouver les mêmes mots dans le devis, les activités et l'évaluation.</p></header>
+<div class="flow"><div class="step"><strong>Devis et intention</strong><br>Quelle compétence et quelle visée?</div><div class="arrow" aria-hidden="true">↔</div><div class="step"><strong>Objectifs et manifestations</strong><br>Quel apprentissage et quels signes attendus?</div><div class="arrow" aria-hidden="true">↔</div><div class="step"><strong>Activités</strong><br>Quel travail cognitif réellement exigé?</div><div class="arrow" aria-hidden="true">↔</div><div class="step"><strong>Évaluation</strong><br>Quelles traces rendent l'apprentissage reconnaissable?</div></div>
+<h2>La rupture de la situation-problème</h2>
+<div class="casepick" role="group" aria-label="Choisir une situation"><span class="small">Situation :</span><button type="button" class="pickbtn" data-pick="bio" aria-pressed="true">Biologie cellulaire</button><button type="button" class="pickbtn" data-pick="fr" aria-pressed="false">Écriture et littérature</button></div>
+<div data-case="fr" hidden>
+<div class="tablewrap"><table class="table"><thead><tr><th>Élément</th><th>Plan proposé</th><th>Observation didactique</th></tr></thead><tbody>
+<tr><td>Devis</td><td>Analyser des textes littéraires; relier thèmes, forme et courant.</td><td>Visée d'interprétation : expliquer ce que la forme produit comme sens.</td></tr>
+<tr><td>Activités</td><td>Exposés sur les courants; repérage de procédés indiqués dans la consigne.</td><td>Réception, puis reconnaissance guidée.</td></tr>
+<tr><td>Quiz de lecture</td><td>Questions sur l'intrigue et les personnages.</td><td>Vérifie la lecture, pas l'interprétation.</td></tr>
+<tr><td>Évaluation</td><td>Nommer cinq procédés et le courant d'un extrait.</td><td>Ne donne pas accès au lien entre procédé, sens, thème et courant.</td></tr>
+</tbody></table></div>
+<div class="panel soft"><h3>Une version plus cohérente</h3><p>Après une phase où l'on apprend à reconnaître les procédés, les personnes étudiantes comparent deux paragraphes d'analyse, l'un qui énumère et l'autre qui interprète, et dégagent ce qui les distingue. Elles rédigent ensuite de courts paragraphes du type « procédé, citation, effet, lien avec le thème », reçoivent une rétroaction, puis les révisent. L'épreuve finale demande une analyse d'un extrait inédit où chaque procédé relevé doit servir une idée.</p><p><strong>Point crucial :</strong> toutes les tâches intermédiaires n'ont pas à avoir le même niveau d'exigence. Le repérage des procédés reste utile comme étape. Il faut toutefois offrir de véritables occasions d'interpréter et des traces qui permettent de le reconnaître.</p></div>
+</div>
+<div data-case="bio">
+<div class="tablewrap"><table class="table"><thead><tr><th>Élément</th><th>Plan proposé</th><th>Observation didactique</th></tr></thead><tbody>
+<tr><td>Devis</td><td>Expliquer la synthèse d'une protéine fonctionnelle.</td><td>Visée d'explication causale.</td></tr>
+<tr><td>Activités</td><td>Exposé avec animation; tableau à compléter avec une banque de mots.</td><td>Réception, puis reconnaissance et association.</td></tr>
+<tr><td>Laboratoire</td><td>Protocole d'extraction d'ADN et rapport préformaté.</td><td>Manipulation sans lien explicite avec la relation gène-protéine.</td></tr>
+<tr><td>Évaluation</td><td>Questions à choix multiples sur les enzymes et les lieux.</td><td>Ne donne pas accès à la construction de relations causales.</td></tr>
+</tbody></table></div>
+<div class="panel soft"><h3>Une version plus cohérente</h3><p>Après une phase de construction du vocabulaire, les personnes prédisent l'effet de mutations sur des séquences fournies, interprètent un gel d'électrophorèse et reçoivent une rétroaction sur leurs explications. L'épreuve finale comprend au moins une question où il faut expliquer un cas nouveau, en plus des questions fermées.</p><p><strong>Point crucial :</strong> toutes les tâches intermédiaires n'ont pas à avoir le même niveau d'exigence. Elles peuvent progresser de l'identification vers l'explication. Il faut toutefois offrir de véritables occasions de développer l'apprentissage visé et des traces qui permettent de le reconnaître.</p></div>
+</div>
+<h2>La planification à rebours, à chaque échelle</h2>
+<div class="flow"><div class="step"><span class="eyebrow">1 · Cibles</span><br><strong>Déterminer les apprentissages attendus</strong><br>Devis, plan-cadre, IP et objectifs.</div><div class="arrow" aria-hidden="true">→</div><div class="step"><span class="eyebrow">2 · Preuves</span><br><strong>Déterminer les manifestations et les traces</strong><br>Épreuve finale, évaluations, critères.</div><div class="arrow" aria-hidden="true">→</div><div class="step"><span class="eyebrow">3 · Parcours</span><br><strong>Concevoir activités et étayage</strong><br>Progression, rétroactions, ajustements.</div></div>
+<div class="tablewrap"><table class="table"><thead><tr><th>Échelle</th><th>Cibles</th><th>Preuves</th><th>Parcours</th></tr></thead><tbody>
+<tr><td><strong>Session</strong></td><td>La compétence et son standard.</td><td>L'épreuve finale de cours et les évaluations sommatives.</td><td>Les parties du cours et leur ordre.</td></tr>
+<tr><td><strong>Séquence</strong></td><td>IP et OP de la séquence.</td><td>Une tâche d'intégration et ses critères.</td><td>Les séances et leurs fonctions (contextualiser, réaliser, intégrer).</td></tr>
+<tr><td><strong>Séance</strong></td><td>Objectifs de la séance.</td><td>Les traces formatives recueillies pendant ou à la fin.</td><td>Le déroulement minuté et la répartition des actions.</td></tr>
+</tbody></table></div>
+<p>La démarche est <strong>itérative</strong> : concevoir une tâche ou préciser un critère peut conduire à reformuler l'objectif ou à ajuster la progression.</p>
+<div class="exercise quiz" data-answer="b"><span class="exhead">Cas contrasté · philosophie</span><h3>L'objectif vise à « formuler une objection pertinente à une thèse et y répondre ». Quelle évaluation est la plus alignée?</h3>
+<div class="options"><label class="option"><input type="radio" name="qalign" value="a"> Associer dix philosophes de l'Antiquité à leur thèse principale.</label><label class="option"><input type="radio" name="qalign" value="b"> Dans un court texte argumentatif sur une question donnée, présenter une thèse, une objection sérieuse et une réfutation.</label><label class="option"><input type="radio" name="qalign" value="c"> Résumer librement un dialogue lu en classe.</label></div>
+<button class="btn" type="button" data-check-quiz>Vérifier</button><div class="feedback" aria-live="polite"></div>
+<div class="explain" hidden>La tâche B demande précisément le travail visé : construire une objection et y répondre. La tâche A peut préparer cet apprentissage, mais ne permet pas de le vérifier.</div></div>
+</section>
+
+<!-- ============ 9 ÉVALUATION ============ -->
+<section class="chapter" id="evaluation" data-title="9 · Évaluation au collégial" data-short="Évaluation au collégial" data-obj="4 et 6" data-part="Planifier le moyen et le court terme">
+<header class="chapterhead"><div class="kicker">Chapitre 9 · Obj. 4 et 6</div><h1>Recueillir des traces, porter un jugement, réguler</h1><p class="sectionintro">Au collégial, on évalue l'atteinte d'une compétence selon un standard. Le cadre vient du RREC et de la PIEA; les outils, de la planification.</p></header>
+<div class="grid3">
+<div class="card"><span class="eyebrow">Seuil</span><h3>60 %</h3><p>La note qui correspond à l'atteinte minimale des objectifs d'un cours est 60 % (art. 27 du RREC). Le standard du devis décrit ce que signifie cette atteinte minimale.</p></div>
+<div class="card"><span class="eyebrow">Épreuve finale de cours</span><h3>Juger de la compétence</h3><p>De nombreuses PIEA prévoient une évaluation finale qui porte sur l'ensemble de la compétence ou sur la partie visée par le cours. Sa forme et son poids minimal sont fixés localement.</p></div>
+<div class="card"><span class="eyebrow">Épreuve synthèse</span><h3>Juger du programme</h3><p>Chaque programme menant au DEC comporte une épreuve synthèse prévue par la PIEA (art. 25). En Sciences de la nature, elle est rattachée à la compétence d'intégration.</p></div>
+</div>
+<h2>Critère, indicateur, niveau</h2>
+<div class="grid3">
+<div class="card"><h3>Critère</h3><p>Dimension de qualité sur laquelle repose le jugement. Au collégial, on le rattache aux critères de performance et au standard du devis.</p></div>
+<div class="card"><h3>Indicateur</h3><p>Élément observable qui aide à apprécier ce critère dans une tâche déterminée.</p></div>
+<div class="card"><h3>Niveau</h3><p>Degré de qualité, décrit par les caractéristiques de la production ou de la démarche.</p></div>
+</div>
+<div class="note"><strong>Attention :</strong> les niveaux d'une grille ne sont pas les six catégories de Bloom. On peut juger une <em>même explication</em> selon différents degrés de justesse, de précision et de cohérence.</div>
+<h2>Une grille descriptive : exemple didactique</h2>
+<p>Exemple illustratif pour une question d'épreuve où il faut expliquer l'effet d'une mutation nouvelle. Ce n'est pas une grille ministérielle.</p>
+<div class="tablewrap"><table class="table"><thead><tr><th>Critère</th><th>Insuffisant</th><th>Seuil de réussite</th><th>Satisfaisant</th><th>Approfondi</th></tr></thead><tbody>
+<tr><td>Justesse des relations ADN, ARNm, protéine</td><td>Relations absentes ou erronées.</td><td>Relations essentielles présentes, avec quelques imprécisions sans erreur majeure.</td><td>Relations justes et explication cohérente.</td><td>Relations justes, articulées avec précision jusqu'à la structure et la fonction.</td></tr>
+<tr><td>Emploi de la terminologie (standard)</td><td>Termes clés confondus.</td><td>Termes clés employés correctement la plupart du temps.</td><td>Terminologie juste et constante.</td><td>Terminologie précise, intégrée avec nuance dans le raisonnement.</td></tr>
+<tr><td>Prédiction de l'effet de la mutation</td><td>Prédiction absente ou sans justification.</td><td>Prédiction plausible, justification partielle.</td><td>Prédiction juste et justifiée.</td><td>Prédiction juste, justifiée et nuancée selon le type de mutation.</td></tr>
+</tbody></table></div>
+<p class="small">La colonne « seuil de réussite » est la plus difficile à rédiger : elle traduit le standard. Vérifiez comment votre PIEA et votre département passent d'une grille descriptive à une note.</p>
+<h2>Évaluation formative et régulation</h2>
+<div class="grid2">
+<div class="card"><h3>Pendant l'apprentissage</h3><p>Questions de prédiction en classe, explications écrites courtes, observation au laboratoire, rétroaction sur un brouillon de dissertation, ajustement de l'étayage. Ces traces ne comptent pas dans la note, mais elles orientent la suite.</p></div>
+<div class="card"><h3>Lors du jugement</h3><p>Choisir des tâches et des traces adéquates, appliquer les critères rattachés au devis, décrire les niveaux et fonder le jugement sur des manifestations suffisantes, dans les règles de la PIEA.</p></div>
+</div>
+<div class="exercise quiz" data-answer="a"><span class="exhead">Exercice · distinguer les niveaux</span><h3>Dans une grille, « relations justes et explication cohérente » désigne surtout…</h3>
+<div class="options"><label class="option"><input type="radio" name="qeval" value="a"> Un niveau de qualité attendu pour un critère.</label><label class="option"><input type="radio" name="qeval" value="b"> Le niveau 4 de Bloom, nécessairement.</label><label class="option"><input type="radio" name="qeval" value="c"> Un élément de la compétence du devis.</label></div>
+<button class="btn" type="button" data-check-quiz>Vérifier</button><div class="feedback" aria-live="polite"></div>
+<div class="explain" hidden>Cette formulation décrit une qualité de l'explication. Les niveaux de qualité ne sont pas les catégories de Bloom, et ils ne remplacent pas les éléments de la compétence : ils servent à juger leur atteinte.</div></div>
+</section>
+
+<!-- ============ 10 CUA ============ -->
+<section class="chapter" id="cua" data-title="10 · Diversité et CUA" data-short="Diversité et CUA" data-obj="5" data-part="Planifier pour tous">
+<header class="chapterhead"><div class="kicker">Chapitre 10 · Obj. 5</div><h1>Lever des barrières sans baisser les attentes</h1><p class="sectionintro">La population étudiante d'un cégep est diverse : âge, parcours scolaire, langue, travail rémunéré, responsabilités familiales, situation de handicap, origine. La conception universelle de l'apprentissage (CUA) anticipe cette diversité dès la planification.</p></header>
+<h2>Trois principes</h2>
+<div class="grid3">
+<div class="card"><span class="eyebrow">Le pourquoi</span><h3>Engagement</h3><p>Accueillir les intérêts et les identités, soutenir l'effort et la persévérance, développer la capacité à réguler ses émotions face à la difficulté.</p></div>
+<div class="card"><span class="eyebrow">Le quoi</span><h3>Représentation</h3><p>Varier la perception, clarifier le langage et les symboles, aider à construire les connaissances.</p></div>
+<div class="card"><span class="eyebrow">Le comment</span><h3>Action et expression</h3><p>Varier les interactions et les outils, diversifier l'expression, soutenir le développement de stratégies.</p></div>
+</div>
+<div class="note"><strong>Version des lignes directrices.</strong> Le CAST a publié en juillet 2024 la version 3.0 de ses lignes directrices. Elle met davantage l'accent sur les identités multiples des personnes apprenantes, le sentiment d'appartenance et les barrières qui tiennent aux biais et aux pratiques d'exclusion. La version 2.2 (2018) citée dans la bibliographie du cours reste une référence utile.</div>
+<h2>CUA ou mesure d'accommodement?</h2>
+<div class="grid2">
+<div class="card"><span class="eyebrow">CUA</span><h3>Pour tout le groupe, dès la planification</h3><p>Des options prévues à l'avance, offertes à toutes et à tous, sans diagnostic ni demande : protocole illustré, capsule de démonstration, glossaire, brouillon commenté, choix du moment d'une remise dans une fenêtre.</p></div>
+<div class="card"><span class="eyebrow">Accommodement</span><h3>Pour une personne, selon une évaluation</h3><p>Des mesures déterminées avec les services adaptés pour une personne étudiante en situation de handicap : temps supplémentaire, local isolé, aides technologiques. L'enseignant les applique; il ne les décide pas seul.</p></div>
+</div>
+<p>Une planification conçue selon la CUA réduit souvent le besoin de mesures individuelles, sans le supprimer.</p>
+<h2>La question qui guide : barrière ou attente?</h2>
+<p>Avant d'ajouter une option, demandez-vous ce qui, dans la tâche, est <strong>la compétence à démontrer</strong> et ce qui n'est qu'<strong>un passage obligé non visé</strong>. On peut lever le second; le premier doit être maintenu.</p>
+<div class="tablewrap"><table class="table"><thead><tr><th>Barrière repérée</th><th>Attente maintenue</th><th>Option CUA possible</th></tr></thead><tbody>
+<tr><td>Le protocole de laboratoire n'existe qu'en texte dense, lu en début de séance.</td><td>Réaliser la manipulation de façon sécuritaire et rigoureuse.</td><td>Protocole schématisé, courte capsule de démonstration disponible avant le laboratoire, liste de vérification des étapes.</td></tr>
+<tr><td>L'examen exige de mémoriser le tableau du code génétique.</td><td>Expliquer et prédire l'effet d'une mutation.</td><td>Fournir le tableau : sa mémorisation n'est pas visée par l'élément.</td></tr>
+<tr><td>Les articles scientifiques proposés sont tous en anglais.</td><td>Contextualiser une application de biotechnologie.</td><td>Glossaire bilingue, résumé guidé, choix entre un article en anglais et une source francophone de qualité.</td></tr>
+<tr><td>En français (4EF1), plusieurs personnes bloquent devant la page blanche.</td><td>Rédiger une dissertation explicative structurée.</td><td>Plan guidé, exemples annotés, rétroaction sur une introduction avant la version finale. La dissertation écrite reste la production attendue.</td></tr>
+</tbody></table></div>
+<div class="exercise quiz" data-answer="c"><span class="exhead">Cas contrasté · français</span><h3>Dans le cours 601-102, une personne demande de remplacer la dissertation explicative par une capsule vidéo. Quelle réponse est la plus défendable?</h3>
+<div class="options"><label class="option"><input type="radio" name="qcua" value="a"> Accepter : la CUA demande d'offrir un choix de modes d'expression pour chaque évaluation.</label><label class="option"><input type="radio" name="qcua" value="b"> Refuser sans autre forme : la CUA ne s'applique pas aux cours de français.</label><label class="option"><input type="radio" name="qcua" value="c"> Maintenir la dissertation écrite, qui fait partie de la compétence, et offrir des options sur le parcours (plan guidé, oral préparatoire, rétroaction sur brouillon). Diriger vers les services adaptés si un besoin d'accommodement se présente.</label></div>
+<button class="btn" type="button" data-check-quiz>Vérifier</button><div class="feedback" aria-live="polite"></div>
+<div class="explain" hidden>La CUA porte sur les barrières, pas sur les attentes. Quand le type de production est l'objet même de la compétence, on agit sur le chemin qui y mène. En biologie, où le devis ne fixe pas le format, un choix de mode de production peut au contraire être tout à fait pertinent.</div></div>
+<details class="accordion"><summary>Banque d'options CUA adaptée au collégial</summary><div>
+<p><strong>Représentation.</strong> Présenter les contenus importants sous au moins deux formes (texte et schéma, oral et écrit). Sous-titrer et transcrire les vidéos. Rendre les documents ajustables (police, contraste). Préenseigner le vocabulaire disciplinaire, expliciter la notation et les symboles. Donner des exemples et des contre-exemples. Activer les acquis avant d'introduire un concept. Fournir des organisateurs graphiques et des synthèses régulières.</p>
+<p><strong>Action et expression.</strong> Permettre l'usage des aides technologiques pour toutes et tous lorsque la compétence ne s'y oppose pas. Offrir un choix réel de modes de production lorsque le devis laisse le format ouvert. Fournir des modèles de productions réussies, des gabarits et des amorces. Découper les grandes tâches en jalons avec rétroaction. Rendre les critères visibles dès le départ et enseigner l'autoévaluation.</p>
+<p><strong>Engagement.</strong> Ancrer les tâches dans des enjeux réels et dans les programmes visés par les personnes étudiantes. Offrir des choix authentiques (sujet, cas, ordre des tâches). Moduler le défi (tâches à paliers). Organiser le travail d'équipe avec des rôles clairs. Rendre les progrès visibles. Prévoir un climat où l'erreur est une occasion d'apprendre.</p>
+<p class="small">Adaptée de la banque CUA de votre gabarit de planification et des lignes directrices du CAST.</p></div></details>
+</section>
+
+<!-- ============ 11 PREMIERS PEUPLES ============ -->
+<section class="chapter" id="premierspeuples" data-title="11 · Inclusivité et Premiers Peuples" data-short="Inclusivité et Premiers Peuples" data-obj="5" data-part="Planifier pour tous">
+<header class="chapterhead"><div class="kicker">Chapitre 11 · Obj. 5</div><h1>Mobiliser des perspectives des Premiers Peuples avec pertinence</h1><p class="sectionintro">Il s'agit de deux choses liées : accueillir et soutenir les personnes étudiantes des Premiers Peuples, et intégrer des perspectives et des savoirs autochtones lorsque la discipline et les apprentissages s'y prêtent. Dans les deux cas, la pertinence prime sur l'affichage.</p></header>
+<h2>Quelques repères</h2>
+<div class="grid2">
+<div class="card"><span class="eyebrow">Diversité des nations</span><h3>Onze nations au Québec</h3><p>Dix Premières Nations et la nation inuite, chacune avec sa langue, son territoire et son histoire. Parler de « la » perspective autochtone efface cette diversité : nommez la nation, le territoire, la source.</p></div>
+<div class="card"><span class="eyebrow">Réalités étudiantes</span><h3>Arriver au cégep</h3><p>Pour plusieurs personnes étudiantes des Premières Nations et inuites, entrer au cégep signifie quitter sa communauté, parfois étudier dans une langue seconde et se retrouver peu représentées dans les contenus. L'Institution Kiuna, à Odanak, offre une formation collégiale conçue par et pour les Premières Nations.</p></div>
+<div class="card"><span class="eyebrow">Inclusivité</span><h3>Ce que l'enseignant peut faire</h3><p>Connaître les services d'accueil et de soutien du collège, éviter de demander à une personne de parler « au nom » de sa nation, prévoir de la souplesse lors d'obligations communautaires ou culturelles, et rendre visibles des contributions autochtones dans la discipline.</p></div>
+<div class="card"><span class="eyebrow">Posture</span><h3>D'où je parle</h3><p>Planifier avec des perspectives qui ne sont pas les siennes demande de reconnaître sa position, de s'appuyer sur des voix et des ressources autochtones, et d'accepter de ne pas tout savoir.</p></div>
+</div>
+<div class="note"><strong>Un horizon partagé.</strong> Les appels à l'action 62 et 63 de la Commission de vérité et réconciliation du Canada portent sur l'éducation, notamment la formation du personnel enseignant. La Journée nationale de la vérité et de la réconciliation, le 30 septembre, figure au calendrier de la session.</div>
+<h2>Quatre questions de pertinence</h2>
+<div class="grid2">
+<div class="card"><span class="tag">Lien</span><h3>Sert-elle l'apprentissage visé?</h3><p>La perspective éclaire-t-elle un élément de la compétence ou un critère du standard, ou n'est-elle qu'une amorce décorative?</p></div>
+<div class="card"><span class="tag">Voix</span><h3>Qui parle?</h3><p>Les sources sont-elles produites par des personnes ou des organisations autochtones? Sont-elles citées et créditées?</p></div>
+<div class="card"><span class="tag">Spécificité</span><h3>De quelle nation, de quel territoire?</h3><p>Le contenu est-il situé, ou généralise-t-il à toutes les nations?</p></div>
+<div class="card"><span class="tag">Relation</span><h3>Dans quelle relation?</h3><p>Si l'on invite une personne gardienne de savoirs, le consentement, la reconnaissance et la rétribution sont-ils prévus? Le savoir est-il partagé avec son accord?</p></div>
+</div>
+<h2>Plaquage ou intégration : trois cas</h2>
+<div class="tablewrap"><table class="table"><thead><tr><th>Cours</th><th>Plaquage</th><th>Intégration pertinente</th></tr></thead><tbody>
+<tr><td><strong>Biologie cellulaire</strong> (0B01)</td><td>Ouvrir le cours par une diapositive sur les « plantes médicinales autochtones », sans nation, sans source et sans lien avec la cellule.</td><td>Le standard exige de contextualiser des applications de biotechnologies. Une étude de cas sur la recherche génomique menée avec des communautés autochtones permet de discuter du consentement et de la gouvernance des données, en s'appuyant sur les principes PCAP® (propriété, contrôle, accès, possession) du Centre de gouvernance de l'information des Premières Nations.</td></tr>
+<tr><td><strong>Écologie</strong> (0B02)</td><td>Présenter les savoirs autochtones comme une « croyance » que la science viendrait corriger, ou comme un simple supplément culturel.</td><td>Analyser les interactions dans un écosystème du territoire en mettant en dialogue savoirs scientifiques et savoirs territoriaux documentés par la nation concernée, dans l'esprit de l'approche à double perspective (Etuaptmumk) proposée par l'aîné mi'gmaq Albert Marshall (Hatcher et collab., 2009).</td></tr>
+<tr><td><strong>Littérature québécoise</strong> (4EF2)</td><td>Consacrer une « semaine autochtone » où les textes servent de documents sur une culture plutôt que d'œuvres littéraires.</td><td>Étudier des œuvres d'autrices innues de langue française, comme An Antane Kapesh, Joséphine Bacon ou Naomi Fontaine, comme on étudie toute œuvre du corpus : forme, thèmes, représentation du monde, place dans la littérature québécoise.</td></tr>
+</tbody></table></div>
+<div class="panel soft"><h3>La pertinence peut aussi conduire à ne pas intégrer</h3><p>Dans certaines séquences, aucun lien solide n'existe avec l'apprentissage visé. Une justification argumentée de ce choix vaut mieux qu'un ajout forcé. Le Travail 2B demande d'intégrer ces perspectives <em>lorsque pertinent</em> : c'est le raisonnement qui est évalué.</p></div>
+<div class="exercise quiz" data-answer="b"><span class="exhead">Exercice · juger de la pertinence</span><h3>En philosophie (4PH1, conceptions de l'être humain), quelle proposition est la plus défendable?</h3>
+<div class="options"><label class="option"><input type="radio" name="qpp" value="a"> Demander à la seule personne innue du groupe de présenter « la vision autochtone de l'être humain ».</label><label class="option"><input type="radio" name="qpp" value="b"> Mettre en dialogue une conception moderne de l'être humain avec la pensée d'un auteur autochtone publié et situé, en traitant celle-ci avec la même rigueur conceptuelle que les autres.</label><label class="option"><input type="radio" name="qpp" value="c"> Ajouter une citation autochtone inspirante au début de chaque cours.</label></div>
+<button class="btn" type="button" data-check-quiz>Vérifier</button><div class="feedback" aria-live="polite"></div>
+<div class="explain" hidden>La proposition B répond aux quatre questions : lien avec la compétence, source autochtone identifiée, pensée située, traitement intellectuel égal. La proposition A fait peser sur une personne un rôle de porte-parole; la proposition C relève de l'affichage.</div></div>
+<div class="exercise"><span class="exhead">Application · votre cours-cible</span><h3>Où une perspective des Premiers Peuples serait-elle pertinente, et pourquoi?</h3>
+<div class="field"><label for="pp-reflexion">Ma réflexion</label><textarea id="pp-reflexion" data-save data-group="Premiers Peuples" placeholder="Élément ou critère du devis concerné, sources envisagées, nation et territoire, relation à établir… ou justification d'un choix de ne pas intégrer."></textarea></div></div>
+</section>
+
+<!-- ============ 12 IA ============ -->
+<section class="chapter" id="ia" data-title="12 · L'IA, une proposition à examiner" data-short="L'IA, une proposition à examiner" data-obj="6" data-part="Réguler et défendre">
+<header class="chapterhead"><div class="kicker">Chapitre 12 · Obj. 6</div><h1>Conserver, modifier ou rejeter</h1><p class="sectionintro">Dans ce cours, l'IA générative est un objet de travail professionnel : elle produit des propositions, et la compétence visée consiste à les examiner au regard du devis, du plan de cours et des connaissances professionnelles.</p></header>
+<h2>Une proposition à examiner</h2>
+<div class="docbox"><h4>Réponse fictive d'un outil d'IA à la demande : « Planifie une séance de 2 h sur la synthèse des protéines pour le cours 0B01. »</h4>
+<p><strong>Objectif de la séance :</strong> mémoriser les 20 acides aminés, conformément au critère de performance du devis.</p>
+<p><strong>Déroulement :</strong> (1) Amorce : raconter une légende autochtone sur l'origine de la vie pour susciter l'intérêt. (2) Exposé magistral de 90 minutes sur la transcription et la traduction. (3) Activité avec un modèle de perles colorées pour représenter les codons et les acides aminés. (4) Prédiction en équipe de l'effet d'une substitution, avec rétroaction de l'enseignant.</p>
+<p><strong>Évaluation :</strong> quiz de 40 questions à choix multiples, qui compte pour 15 % de la note.</p>
+<p><strong>CUA :</strong> fournir des vidéos YouTube.</p>
+<p><strong>Référence :</strong> Gagnon, L. (2022). <em>Guide ministériel de la biologie collégiale</em>. Ministère de l'Enseignement supérieur.</p></div>
+<div class="exercise multi"><span class="exhead">Analyse · repérer les problèmes</span><h3>Quels éléments faudrait-il modifier ou rejeter? Cochez tout ce qui s'applique.</h3>
+<div class="options">
+<label class="option"><input type="checkbox" data-correct="1"> <span>L'objectif renvoie à un critère de performance qui n'existe pas dans le devis.<span class="why" hidden>Juste. Le devis 0B01 ne demande pas de mémoriser les acides aminés. L'IA invente une prescription : vérifiez toujours dans le document officiel.</span></span></label>
+<label class="option"><input type="checkbox" data-correct="1"> <span>L'amorce mobilise une « légende autochtone » sans nation, sans source et sans lien avec l'apprentissage.<span class="why" hidden>Juste. C'est un plaquage, qui risque en plus de réduire des savoirs à du folklore.</span></span></label>
+<label class="option"><input type="checkbox" data-correct="1"> <span>Un exposé de 90 minutes dans une séance de 2 heures laisse peu de place au travail cognitif des personnes étudiantes.<span class="why" hidden>Juste. L'exposé peut avoir sa place, mais sa durée et son découpage sont à revoir, par exemple avec des arrêts de prédiction.</span></span></label>
+<label class="option"><input type="checkbox" data-correct="1"> <span>Un quiz sommatif de choix multiples placé dans la première séance est mal aligné et prématuré.<span class="why" hidden>Juste. À ce moment, une évaluation formative serait plus cohérente, et le format fermé donne peu accès à l'explication.</span></span></label>
+<label class="option"><input type="checkbox" data-correct="1"> <span>La mesure CUA n'est rattachée à aucune barrière précise.<span class="why" hidden>Juste. « Fournir des vidéos » ne dit ni quelle barrière on lève, ni pour quel apprentissage.</span></span></label>
+<label class="option"><input type="checkbox" data-correct="1"> <span>La référence semble inventée.<span class="why" hidden>Juste. Aucun document de ce titre n'est connu; les outils d'IA fabriquent couramment des références plausibles. Toute source doit être retrouvée et consultée.</span></span></label>
+<label class="option"><input type="checkbox" data-correct="0"> <span>L'activité avec un modèle de perles doit être rejetée parce qu'elle est trop simple pour le collégial.<span class="why" hidden>Pas nécessairement. Un modèle concret peut soutenir la compréhension du code par triplets, à condition de demander d'expliquer ce que le modèle représente et ce qu'il ne représente pas.</span></span></label>
+<label class="option"><input type="checkbox" data-correct="0"> <span>La prédiction en équipe avec rétroaction doit être rejetée.<span class="why" hidden>Non. C'est l'élément le plus aligné sur la compétence : il est à conserver, et peut-être à placer plus tôt dans la séance.</span></span></label>
+</div>
+<div class="buttons"><button class="btn" type="button" data-check-multi>Vérifier</button></div>
+<div class="feedback" aria-live="polite"></div>
+</div>
+<h2>Rendre ses décisions visibles</h2>
+<div class="tablewrap"><table class="table"><thead><tr><th>Proposition de l'IA</th><th>Décision</th><th>Justification</th></tr></thead><tbody>
+<tr><td>Prédiction en équipe de l'effet d'une substitution</td><td>Conservée, déplacée en début de réalisation</td><td>Sollicite directement l'élément 4 et produit des traces formatives.</td></tr>
+<tr><td>Modèle de perles</td><td>Modifiée</td><td>Ajout d'une question sur les limites du modèle.</td></tr>
+<tr><td>Objectif « mémoriser les 20 acides aminés »</td><td>Rejetée</td><td>Critère absent du devis; le tableau du code génétique sera fourni.</td></tr>
+</tbody></table></div>
+<p>Le plan de cours 3MED937 précise le format de la déclaration : outil utilisé, partie du travail visée, usage des résultats (conservés, modifiés, rejetés ou utilisés comme point de comparaison). Les productions de l'IA mobilisées dans l'analyse ou la conception sont jointes en annexe.</p>
+<div class="quote">« J'ai utilisé une IAG pour proposer une réorganisation de la progression de la séquence retenue et deux modalités d'évaluation. J'ai conservé une proposition, modifié la deuxième afin de mieux l'aligner sur les objectifs d'apprentissage et rejeté une activité qui ne répondait pas aux contraintes du plan de cours. »</div>
+<p class="small">Exemple de déclaration tiré du plan de cours 3MED937. L'atelier comporte un journal pour noter vos usages au fil du travail.</p>
+</section>
+
+<!-- ============ 13 ATELIER ============ -->
+<section class="chapter" id="atelier" data-title="13 · Atelier de planification" data-short="Atelier de planification" data-obj="3 à 6" data-part="Réinvestir">
+<header class="chapterhead"><div class="kicker">Chapitre 13 · Réinvestir</div><h1>Construire et vérifier sa planification</h1><p class="sectionintro">Ce canevas suit les Travaux 2A et 2B et reprend les rubriques de vos deux gabarits. Il sert de brouillon : il ne remplace ni les tableaux complets du gabarit ni les consignes des travaux.</p></header>
+<div class="note"><strong>Consigne : exportez votre brouillon en .txt.</strong> Vos réponses sont conservées seulement dans ce navigateur, sur cet appareil. À la fin de chaque séance de travail, cliquez sur « Exporter mon brouillon (.txt) », au bas de l'atelier, et gardez le fichier avec vos documents du cours. Vous pourrez ainsi reprendre votre travail sur un autre appareil et le transposer dans le gabarit complet.</div>
+<div class="panel">
+<div class="groupttl">Travail 2A · Analyse et orientations</div>
+<p class="small">Contexte du cours-cible, analyse du devis et du plan de cours existant, ajustements, partie du cours retenue et premier organigramme de séquence.</p>
+<div class="formgrid">
+<div class="field"><label for="a-cours">Cours-cible</label><span class="hint">Titre, numéro, pondération, session</span><input id="a-cours" data-save data-group="Travail 2A" placeholder="Ex. Biologie cellulaire, 101-XXX-XX, 2-2-2, session 1"></div>
+<div class="field"><label for="a-prog">Programme et place dans la grille</label><span class="hint">Programme, préalables, cours suivants</span><input id="a-prog" data-save data-group="Travail 2A" placeholder="Ex. Sciences de la nature (200.B1)"></div>
+<div class="field wide"><label for="a-comp">Compétence et éléments visés</label><span class="hint">Code, énoncé, éléments de la compétence</span><textarea id="a-comp" data-save data-group="Travail 2A" placeholder="0B01 · Expliquer les structures et les fonctions des cellules…"></textarea></div>
+<div class="field wide"><label for="a-standard">Standard, critères de performance et contexte de réalisation</label><textarea id="a-standard" data-save data-group="Travail 2A" placeholder="Critères déterminants pour la planification et l'évaluation…"></textarea></div>
+<div class="field wide"><label for="a-marges">Ce que le devis prescrit et ce qu'il laisse ouvert</label><textarea id="a-marges" data-save data-group="Travail 2A" placeholder="Prescrit : … · Ouvert : … · Décidé par le département ou le programme : …"></textarea></div>
+<div class="field"><label for="a-forces">Forces du plan de cours existant</label><textarea id="a-forces" data-save data-group="Travail 2A" placeholder="Conformité, progression, alignement, charge, évaluation…"></textarea></div>
+<div class="field"><label for="a-failles">Failles ou zones de fragilité</label><textarea id="a-failles" data-save data-group="Travail 2A" placeholder="Éléments absents, ruptures d'alignement, surcharge…"></textarea></div>
+<div class="field wide"><label for="a-ajust">Ajustements argumentés</label><span class="hint">Pour chacun : la justification et le palier qui peut en décider</span><textarea id="a-ajust" data-save data-group="Travail 2A"></textarea></div>
+<div class="field wide"><label for="a-partie">Partie du cours retenue et raisons du choix</label><textarea id="a-partie" data-save data-group="Travail 2A" placeholder="Ex. Semaines 8 à 10 : du gène à la protéine fonctionnelle"></textarea></div>
+<div class="field"><label for="a-ip">Intention pédagogique de la séquence</label><textarea id="a-ip" data-save data-group="Travail 2A · Niveau macro" placeholder="Amener les personnes étudiantes à…"></textarea></div>
+<div class="field"><label for="a-op">Objectifs d'apprentissage de la séquence</label><textarea id="a-op" data-save data-group="Travail 2A · Niveau macro" placeholder="La personne étudiante sera capable de…"></textarea></div>
+<div class="field wide"><div class="fieldset"><h4>Organigramme de la séquence</h4><div class="formgrid">
+<div class="field"><label for="a-ctx">Contextualisation · description rapide</label><textarea id="a-ctx" data-save data-group="Travail 2A · Niveau macro"></textarea></div>
+<div class="field"><label for="a-rea">Réalisation · description rapide</label><textarea id="a-rea" data-save data-group="Travail 2A · Niveau macro"></textarea></div>
+<div class="field"><label for="a-int">Intégration · description rapide</label><textarea id="a-int" data-save data-group="Travail 2A · Niveau macro"></textarea></div>
+<div class="field"><label for="a-seances">Séances prévues</label><textarea id="a-seances" data-save data-group="Travail 2A · Niveau macro" placeholder="Séance 1 : … · Séance 2 : …"></textarea></div>
+<div class="field wide"><label for="a-eval">Modalités d'évaluation pressenties</label><textarea id="a-eval" data-save data-group="Travail 2A · Niveau macro" placeholder="Formatives, sommatives, tâche d'intégration…"></textarea></div>
+</div></div></div>
+</div>
+<div class="groupttl" style="margin-top:30px">Travail 2B · Une séance détaillée</div>
+<p class="small">Planification à court terme d'une séance de la séquence, avec la répartition des actions par phase.</p>
+<div class="formgrid">
+<div class="field"><label for="b-seance">Séance</label><span class="hint">Numéro dans la séquence, durée, lieu</span><input id="b-seance" data-save data-group="Travail 2B" placeholder="Ex. Séance 3, 2 h, laboratoire"></div>
+<div class="field"><label for="b-habilete">Type d'habileté</label><span class="hint">Savoir, savoir-faire (cognitif, psychomoteur, perceptuel), savoir-être, savoir-agir</span><input id="b-habilete" data-save data-group="Travail 2B"></div>
+<div class="field"><label for="b-ip">Intention pédagogique</label><textarea id="b-ip" data-save data-group="Travail 2B" placeholder="Amener les personnes étudiantes à…"></textarea></div>
+<div class="field"><label for="b-op">Objectifs d'apprentissage (Bloom)</label><textarea id="b-op" data-save data-group="Travail 2B" placeholder="La personne étudiante sera capable de…"></textarea></div>
+<div class="field wide"><label for="b-balises">Balises de contenu et manifestations attendues</label><textarea id="b-balises" data-save data-group="Travail 2B"></textarea></div>
+</div>
+<div class="grid3" style="margin-top:14px">
+<div class="fieldset"><h4>Contextualisation</h4><div class="field"><label for="b-ctx-t">Temps (min) et matériel</label><input id="b-ctx-t" data-save data-group="Travail 2B · Contextualisation"></div><div class="field"><label for="b-ctx-e">Actions de l'enseignant</label><textarea id="b-ctx-e" data-save data-group="Travail 2B · Contextualisation"></textarea></div><div class="field"><label for="b-ctx-s">Actions des personnes étudiantes</label><textarea id="b-ctx-s" data-save data-group="Travail 2B · Contextualisation"></textarea></div></div>
+<div class="fieldset"><h4>Réalisation</h4><div class="field"><label for="b-rea-t">Temps (min) et matériel</label><input id="b-rea-t" data-save data-group="Travail 2B · Réalisation"></div><div class="field"><label for="b-rea-e">Actions de l'enseignant</label><textarea id="b-rea-e" data-save data-group="Travail 2B · Réalisation"></textarea></div><div class="field"><label for="b-rea-s">Actions des personnes étudiantes</label><textarea id="b-rea-s" data-save data-group="Travail 2B · Réalisation"></textarea></div></div>
+<div class="fieldset"><h4>Intégration</h4><div class="field"><label for="b-int-t">Temps (min) et matériel</label><input id="b-int-t" data-save data-group="Travail 2B · Intégration"></div><div class="field"><label for="b-int-e">Actions de l'enseignant</label><textarea id="b-int-e" data-save data-group="Travail 2B · Intégration"></textarea></div><div class="field"><label for="b-int-s">Actions des personnes étudiantes</label><textarea id="b-int-s" data-save data-group="Travail 2B · Intégration"></textarea></div></div>
+</div>
+<div class="formgrid" style="margin-top:14px">
+<div class="field"><label for="b-formatif">Évaluation formative et rétroactions</label><textarea id="b-formatif" data-save data-group="Travail 2B · Évaluation" placeholder="À quel moment? Avec quelles traces? Comment réagir?"></textarea></div>
+<div class="field"><label for="b-sommatif">Évaluation sommative et outil</label><textarea id="b-sommatif" data-save data-group="Travail 2B · Évaluation" placeholder="Tâche, critères rattachés au devis, grille…"></textarea></div>
+<div class="field"><label for="b-cua">CUA : barrières repérées et options prévues</label><textarea id="b-cua" data-save data-group="Travail 2B · Diversité" placeholder="Barrière · attente maintenue · option"></textarea></div>
+<div class="field"><label for="b-pp">Perspectives des Premiers Peuples</label><textarea id="b-pp" data-save data-group="Travail 2B · Diversité" placeholder="Intégration pertinente et sources, ou justification de ne pas intégrer"></textarea></div>
+<div class="field"><label for="b-amenag">Aménagement</label><input id="b-amenag" data-save data-group="Travail 2B" placeholder="Classe, laboratoire, en ligne, disposition…"></div>
+<div class="field"><label for="b-regul">Mise à l'épreuve et régulation</label><textarea id="b-regul" data-save data-group="Travail 2B · Régulation" placeholder="Ce qui a été observé lors de la simulation, écarts prévu et réalisé, ajustements"></textarea></div>
+<div class="field wide"><label for="b-ia">Journal d'usage de l'IA</label><span class="hint">Outil, partie du travail, proposition, décision (conservée, modifiée, rejetée) et justification</span><textarea id="b-ia" data-save data-group="Utilisation de l'intelligence artificielle"></textarea></div>
+</div>
+<div class="buttons">
+<button class="btn" type="button" id="btn-export">↓ Exporter mon brouillon (.txt)</button>
+<button class="btn alt" type="button" id="btn-copy">Copier mon brouillon</button>
+<button class="btn alt" type="button" id="btn-print">Imprimer la ressource</button>
+<button class="btn ghost" type="button" id="btn-clear">Effacer le brouillon</button>
+</div>
+<div class="confirmbox" id="confirmclear" role="alertdialog" aria-labelledby="confirmtxt"><p id="confirmtxt" style="margin-top:0"><strong>Effacer tous les champs du brouillon dans ce navigateur?</strong> Cette action est définitive. Exportez ou copiez votre travail avant de continuer.</p><div class="buttons" style="margin-bottom:0"><button class="btn" type="button" id="btn-clear-yes">Oui, effacer</button><button class="btn alt" type="button" id="btn-clear-no">Annuler</button></div></div>
+<p class="small" aria-live="polite" id="savedstatus">Les champs sont conservés localement dans ce navigateur lorsque cela est permis. Pensez à exporter ou à copier votre brouillon.</p>
+</div>
+<h2>Autovérification : huit questions exigeantes</h2>
+<div class="panel soft"><ol>
+<li>Ai-je distingué ce que le devis prescrit de ce qui relève de ma marge de manœuvre, et nommé le palier de chaque décision?</li>
+<li>Ai-je distingué la visée d'enseignement de ce que la personne étudiante sera capable de faire?</li>
+<li>Mes objectifs de séance sont-ils plus précis que les éléments et les critères du devis?</li>
+<li>Ai-je décrit les manifestations qui permettraient de reconnaître les apprentissages visés?</li>
+<li>Les tâches sollicitent-elles réellement ces activités cognitives, au-delà de l'effet de présentation?</li>
+<li>Les évaluations recueillent-elles des traces pertinentes, et les critères sont-ils rattachés au standard?</li>
+<li>Les options CUA lèvent-elles des barrières précises sans réduire les attentes, et la place des perspectives des Premiers Peuples est-elle justifiée?</li>
+<li>Ai-je documenté mes usages de l'IA et les décisions qui en découlent?</li>
+</ol></div>
+<div class="exercise"><span class="exhead">Boucler la boucle</span><h3>Retour sur la situation-problème</h3><p>Relisez votre analyse initiale de la situation choisie (biologie cellulaire ou écriture et littérature), puis expliquez ce que vous conserveriez et ce que vous modifieriez, et à quel palier.</p>
+<div class="field"><label for="finalref">Mon analyse revisitée</label><textarea id="finalref" data-save data-group="Retour réflexif" style="min-height:145px" placeholder="Ruptures d'alignement, apprentissages préparatoires, nouvelle tâche d'explication, traces, critères, décisions départementales…"></textarea></div>
+<div class="buttons"><button class="btn alt" type="button" data-go="probleme">Revoir la situation de départ</button></div></div>
+</section>
+
+<!-- ============ RESSOURCES ============ -->
+<section class="chapter" id="ressources" data-title="Références et usage" data-short="Références et usage">
+<header class="chapterhead"><div class="kicker">Pour poursuivre</div><h1>Documents et repères</h1><p class="sectionintro">Le guide complète les documents officiels. Pour planifier et évaluer un cours donné, le devis, la PIEA du collège et les documents départementaux font autorité.</p></header>
+<div class="panel"><h3>Cadre réglementaire et ministériel</h3>
+<div class="reference"><strong>Règlement sur le régime des études collégiales (RLRQ, c. C-29, r. 4).</strong> Objectifs et standards, composantes de formation, plan de cours (art. 20), PIEA et épreuve synthèse (art. 25), épreuve uniforme (art. 26), seuil de réussite (art. 27).<br><a href="https://www.legisquebec.gouv.qc.ca/fr/document/rc/C-29,%20r.%204" target="_blank" rel="noopener">Consulter sur LégisQuébec ↗</a></div>
+<div class="reference"><strong>Programmes d'études préuniversitaires.</strong> Accès aux programmes ministériels, dont Sciences de la nature, et aux documents d'harmonisation avec la formation générale.<br><a href="https://www.quebec.ca/education/cegeps-colleges-prives/services/programmes/programmes-etudes-preuniversitaires" target="_blank" rel="noopener">Page des programmes préuniversitaires ↗</a></div>
+<div class="reference"><strong>Sciences de la nature (200.B1), version 2021.</strong> Buts du programme, compétences de la formation spécifique, objectifs de formation générale.<br><a href="https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/education/publications-adm/cegeps/services-administratifs/programmes-etudes-preuniversitaires/principaux-programmes/200-B1-science-nature.pdf" target="_blank" rel="noopener">Programme ministériel en PDF ↗</a></div>
+<div class="reference"><strong>Harmonisation des programmes d'études préuniversitaires et de la formation générale.</strong><br><a href="https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/education/publications-adm/cegeps/services-administratifs/programmes-etudes-preuniversitaires/harmonisation-programme-preuniversitaire.pdf" target="_blank" rel="noopener">Document en PDF ↗</a></div>
+<div class="reference"><strong>L.Q. 2026, c. 5 : Loi visant à réduire la bureaucratie, à accroître l'efficacité de l'État et à renforcer l'imputabilité des hauts fonctionnaires.</strong> Abrogation de la Loi sur la CEEC.<br><a href="https://www.publicationsduquebec.gouv.qc.ca/fileadmin/Fichiers_client/lois_et_reglements/LoisAnnuelles/fr/2026/2026C5F.PDF" target="_blank" rel="noopener">Texte de la loi sanctionnée ↗</a></div>
+</div>
+<div class="panel"><h3>Ressources du réseau collégial</h3>
+<div class="reference"><strong>Éduq.info</strong>, dépôt documentaire du réseau collégial : recherches, guides et documents institutionnels. <a href="https://eduq.info" target="_blank" rel="noopener">eduq.info ↗</a></div>
+<div class="reference"><strong>Profweb</strong>, récits et ressources pédagogiques d'enseignantes et d'enseignants du collégial. <a href="https://www.profweb.ca" target="_blank" rel="noopener">profweb.ca ↗</a></div>
+<div class="reference"><strong>Association québécoise de pédagogie collégiale (AQPC)</strong> et sa revue <em>Pédagogie collégiale</em>. <a href="https://aqpc.qc.ca" target="_blank" rel="noopener">aqpc.qc.ca ↗</a></div>
+<div class="reference"><strong>PERFORMA</strong>, Université de Sherbrooke : formation du personnel enseignant du collégial. <a href="https://www.usherbrooke.ca/performa/" target="_blank" rel="noopener">usherbrooke.ca/performa ↗</a></div>
+<div class="reference"><strong>CAST, lignes directrices de la CUA</strong> (version 3.0, 2024). <a href="https://udlguidelines.cast.org/" target="_blank" rel="noopener">udlguidelines.cast.org ↗</a></div>
+<div class="reference"><strong>Conseil en Éducation des Premières Nations</strong>. <a href="https://www.cepn-fnec.com" target="_blank" rel="noopener">cepn-fnec.com ↗</a> · <strong>Institut Tshakapesh</strong>. <a href="https://www.tshakapesh.ca" target="_blank" rel="noopener">tshakapesh.ca ↗</a></div>
+</div>
+<div class="panel"><h3>Bibliographie du cours mobilisée dans le guide</h3>
+<div class="reference">Battiste, M. (2013). <em>Decolonizing education: Nourishing the learning spirit</em>. Purich Publishing.</div>
+<div class="reference">Campeau, D. M. (2021). Pédagogie autochtone et pédagogie du lieu : proposition d'un modèle d'enseignement autochtonisé. <em>Éducation et francophonie, 49</em>(1), 52-70.</div>
+<div class="reference">CAST. (2018). <em>Universal design for learning guidelines version 2.2</em>. http://udlguidelines.cast.org</div>
+<div class="reference">Hatcher, A., Bartlett, C., Marshall, A. et Marshall, M. (2009). Two-Eyed Seeing in the classroom environment: Concepts, approaches, and challenges. <em>Canadian Journal of Science, Mathematics and Technology Education, 9</em>(3), 141-153.</div>
+<div class="reference">McTighe, J. et Wiggins, G. (2013). <em>Essential questions: Opening doors to student understanding</em>. ASCD.</div>
+<div class="reference">Meyer, A., Rose, D. H. et Gordon, D. (2014). <em>Universal design for learning: Theory and practice</em>. CAST Professional Publishing.</div>
+<div class="reference">Pilote, A. et collab. (2021). <em>Repères et pistes d'action. Guide réflexif pour l'inclusion des perspectives, des savoirs et des réalités des Premiers Peuples dans la formation à l'enseignement</em>. Université Laval.</div>
+<div class="reference">Tomlinson, C. A. (2010). <em>Vivre la différenciation en classe</em>. Chenelière Éducation.</div>
+</div>
+<div class="panel soft"><h3>Gabarits de référence</h3><p>L'atelier reprend les rubriques du gabarit de planification utilisé par Emmanuelle Aurousseau dans ses cours de didactique (niveau macro, fiches de séances par phase) et du modèle de planification du Cégep de Chicoutimi (objectifs d'apprentissage, type d'habileté, balises de contenu, démarche pédagogique, évaluation, durée, aménagement).</p><p>Les fiches de compétences présentées sont résumées à partir des programmes ministériels. Les cas de cours, de plans de cours et de réponses d'IA sont fictifs et construits à des fins didactiques.</p></div>
+<div class="panel"><h3>Utilisation pratique</h3><p>Une fois téléchargé, ce fichier HTML fonctionne hors ligne. Les exercices donnent des rétroactions dans le navigateur. Les champs de rédaction sont sauvegardés localement selon les réglages du navigateur; aucun compte n'est requis et aucune donnée n'est envoyée à un serveur. Exportez ou copiez toujours votre travail avant de changer d'appareil ou de navigateur.</p></div>
+</section>
+
+<div class="chnav" id="chapnav"><button class="btn alt" id="prev" type="button">← Précédent</button><button class="btn" id="next" type="button">Suivant →</button></div>
+<footer class="footnote" style="margin-top:40px">Guide interactif · Planification de l'enseignement au collégial (3MED937) · UQAC · Exemples didactiques à adapter au cours-cible et au collège.</footer>
+</main></div>
+
+<script>
+'use strict';
+(function(){
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v);return true}catch(e){return false}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
+let embedded=false;try{embedded=window.self!==window.top}catch(e){embedded=true}
+const chapters=[...document.querySelectorAll('.chapter')];
+const nav=document.getElementById('navigation');
+const home=document.getElementById('homecards');
+let current='accueil';
+let visited=new Set();try{visited=new Set(JSON.parse(store.get('pec-visited')||'[]'))}catch(e){}
+let lastPart='';
+chapters.forEach((c,i)=>{
+ if(c.dataset.part&&c.dataset.part!==lastPart){lastPart=c.dataset.part;const p=document.createElement('div');p.className='navpart';p.textContent=lastPart;nav.appendChild(p)}
+ const b=document.createElement('button');b.type='button';b.textContent=c.dataset.title;b.dataset.go=c.id;nav.appendChild(b);
+ if(i>0&&i<chapters.length-1){const a=document.createElement('div');a.className='card';
+  const n=c.id==='probleme'?'Entrée':'Chapitre '+(i-1);
+  a.innerHTML='<span class="eyebrow">'+n+'</span><h3>'+c.dataset.short+'</h3>'+(c.dataset.obj?'<div class="tags"><span class="tag">Obj. '+c.dataset.obj+'</span></div>':'')+'<p style="margin-bottom:0"><button class="btn alt" type="button" data-go="'+c.id+'">Explorer →</button></p>';home.appendChild(a)}
+});
+const validIds=new Set(chapters.map(c=>c.id));
+function go(id,scroll){
+ if(!validIds.has(id))id='accueil';
+ const c=document.getElementById(id);
+ chapters.forEach(x=>x.classList.toggle('active',x.id===id));
+ nav.querySelectorAll('button').forEach(b=>{if(b.dataset.go===id)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
+ current=id;visited.add(id);store.set('pec-visited',JSON.stringify([...visited]));
+ document.getElementById('seen').textContent=visited.size+' / '+chapters.length+' sections consultées';
+ document.getElementById('progressinner').style.width=(100*visited.size/chapters.length)+'%';
+ const i=chapters.findIndex(x=>x.id===id);
+ document.getElementById('prev').disabled=i===0;document.getElementById('next').disabled=i===chapters.length-1;
+ try{history.replaceState(null,'','#'+id)}catch(e){}
+ if(scroll!==false)window.scrollTo({top:0,behavior:'auto'});
+ document.title=c.dataset.short+' | Planification de l’enseignement au collégial';
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b){e.preventDefault();go(b.dataset.go)}});
+document.getElementById('prev').addEventListener('click',()=>{const i=chapters.findIndex(x=>x.id===current);if(i>0)go(chapters[i-1].id)});
+document.getElementById('next').addEventListener('click',()=>{const i=chapters.findIndex(x=>x.id===current);if(i<chapters.length-1)go(chapters[i+1].id)});
+
+/* Exercices */
+document.addEventListener('click',e=>{
+ const r=e.target.closest('[data-reveal]');if(r){saveFields();document.getElementById(r.dataset.reveal).classList.add('show')}
+ const q=e.target.closest('[data-check-quiz]');if(q){const ex=q.closest('.exercise');const fb=ex.querySelector('.feedback');const chosen=ex.querySelector('input[type=radio]:checked');fb.classList.add('show');
+  if(!chosen){fb.textContent='Choisissez une réponse avant de vérifier.';return}
+  const ok=chosen.value===ex.dataset.answer;fb.innerHTML='<strong>'+(ok?'Oui, c’est la réponse la plus solide.':'À revoir.')+'</strong> '+ex.querySelector('.explain').innerHTML}
+ const m=e.target.closest('[data-check-multi]');if(m){const ex=m.closest('.exercise');let good=0,total=0,miss=0,wrong=0;
+  ex.querySelectorAll('.option').forEach(o=>{const inp=o.querySelector('input');const right=inp.dataset.correct==='1';if(right)total++;const why=o.querySelector('.why');why.hidden=false;
+   let v=why.querySelector('.verdict');if(!v){v=document.createElement('span');why.prepend(v)}
+   o.classList.remove('isright','iswrong');
+   if(inp.checked&&right){good++;o.classList.add('isright');v.className='verdict ok';v.textContent='Bien vu.'}
+   else if(inp.checked&&!right){wrong++;o.classList.add('iswrong');v.className='verdict no';v.textContent='À nuancer.'}
+   else if(!inp.checked&&right){miss++;v.className='verdict no';v.textContent='À repérer.'}
+   else{v.className='verdict ok';v.textContent='Juste de ne pas cocher.'}});
+  const fb=ex.querySelector('.feedback');fb.classList.add('show');fb.innerHTML='<strong>'+good+' constat(s) pertinent(s) sur '+total+'.</strong> '+(miss?miss+' à repérer encore. ':'')+(wrong?wrong+' choix à nuancer. ':'')+'Lisez la rétroaction sous chaque énoncé.'}
+ const s=e.target.closest('[data-check-sort]');if(s){const ex=s.closest('.exercise');let good=0,n=0,empty=0;
+  ex.querySelectorAll('.sortrow').forEach(row=>{const sel=row.querySelector('select');n++;const why=row.querySelector('.why');
+   if(!sel.value){empty++;why.hidden=true;return}
+   why.hidden=false;let v=why.querySelector('.verdict');if(!v){v=document.createElement('span');why.prepend(v)}
+   if(sel.value===sel.dataset.answer){good++;v.className='verdict ok';v.textContent='Oui.'}else{v.className='verdict no';v.textContent='Plutôt : '+sel.querySelector('option[value="'+sel.dataset.answer+'"]').textContent+'.'}});
+  const fb=ex.querySelector('.feedback');fb.classList.add('show');fb.innerHTML='<strong>'+good+' sur '+n+'.</strong> '+(empty?empty+' décision(s) sans réponse. ':'')+'Les pratiques varient selon les collèges : vérifiez-les dans votre enquête du Travail 1.'}
+});
+
+/* Choix de la situation-problème */
+function setCase(c){document.querySelectorAll('[data-case]').forEach(el=>{el.hidden=el.dataset.case!==c});document.querySelectorAll('[data-pick]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.pick===c?'true':'false'));store.set('pec-case',c)}
+document.addEventListener('click',e=>{const p=e.target.closest('[data-pick]');if(p)setCase(p.dataset.pick)});
+setCase(store.get('pec-case')==='fr'?'fr':'bio');
+
+/* Brouillon */
+const fields=[...document.querySelectorAll('[data-save]')];
+const status=document.getElementById('savedstatus');
+fields.forEach(el=>{const v=store.get('pec-field-'+el.id);if(v!==null)el.value=v;
+ el.addEventListener('input',()=>{status.textContent=store.set('pec-field-'+el.id,el.value)?'Brouillon conservé localement dans ce navigateur.':'Sauvegarde locale indisponible : exportez ou copiez votre brouillon.'})});
+function saveFields(){fields.forEach(el=>store.set('pec-field-'+el.id,el.value))}
+function draftText(){const lines=['DOSSIER DE PLANIFICATION · 3MED937 · BROUILLON','Document de travail à transposer dans le gabarit complet',''];let g='';
+ fields.forEach(el=>{const grp=el.dataset.group||'';if(grp!==g){g=grp;lines.push('','=== '+grp.toUpperCase()+' ===','')}
+  const label=document.querySelector('label[for="'+el.id+'"]');lines.push((label?label.textContent:el.id).toUpperCase());lines.push(el.value||'(non renseigné)');lines.push('')});
+ return lines.join('\n')}
+const bExport=document.getElementById('btn-export'),bPrint=document.getElementById('btn-print'),bCopy=document.getElementById('btn-copy');
+if(embedded){bExport.hidden=true;bPrint.hidden=true}
+bExport.addEventListener('click',()=>{saveFields();const blob=new Blob([draftText()],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Brouillon_planification_collegial.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+bPrint.addEventListener('click',()=>window.print());
+bCopy.addEventListener('click',()=>{saveFields();const t=draftText();
+ const fallback=()=>{const ta=document.createElement('textarea');ta.value=t;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();status.textContent=ok?'Brouillon copié : collez-le dans votre document.':'La copie automatique a échoué : sélectionnez le texte des champs manuellement.'};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(()=>{status.textContent='Brouillon copié : collez-le dans votre document.'},fallback)}else fallback()});
+const box=document.getElementById('confirmclear');
+document.getElementById('btn-clear').addEventListener('click',()=>{box.classList.add('show');document.getElementById('btn-clear-no').focus()});
+document.getElementById('btn-clear-no').addEventListener('click',()=>box.classList.remove('show'));
+document.getElementById('btn-clear-yes').addEventListener('click',()=>{fields.forEach(el=>{el.value='';store.del('pec-field-'+el.id)});box.classList.remove('show');status.textContent='Les champs du brouillon sont effacés.'});
+
+go(location.hash.replace('#','')||'accueil',false);
+window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');if(h&&h!==current)go(h)});
+})();
+</script>
+
+</body></html>
